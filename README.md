@@ -2,7 +2,7 @@
 
 Predicting online community health trajectories using temporal graph neural networks.
 
-## Team Members
+## Collaborators
 - David Lupea
 - Kalyani Limaye
 - Vedant Sahu
@@ -12,6 +12,12 @@ This project implements a temporal GNN framework to predict Stack Exchange commu
 
 ## Setup
 ```bash
+# Create virtual environment
+python -m venv venv
+venv\Scripts\activate  # On Windows
+# source venv/bin/activate  # On Linux/Mac
+
+# Install dependencies
 pip install -r requirements.txt
 ```
 
@@ -21,3 +27,4 @@ pip install -r requirements.txt
 - `notebooks/`: Jupyter notebooks for exploration
 - `experiments/`: Training scripts and configs
 - `results/`: Model outputs and visualizations
+- `docs/`: Project documentation
