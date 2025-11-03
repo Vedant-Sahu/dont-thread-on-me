@@ -1,0 +1,3089 @@
+{
+  "enumeration_date": "2025-11-01T12:36:26.808669",
+  "total_sites": 178,
+  "sites": {
+    "3dprinting.stackexchange.com": {
+      "site_name": "3dprinting.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "3dprinting.stackexchange.com.7z",
+          "size_bytes": 19850836,
+          "format": "7z",
+          "md5": "886991f947c35fb7fdb0a6e2ef1672a8",
+          "mtime": 1712441556.0
+        }
+      },
+      "total_size_bytes": 19850836,
+      "file_count": 1,
+      "last_modified": 1712441556.0,
+      "total_size_mb": 18.93,
+      "size_category": "small"
+    },
+    "academia.stackexchange.com": {
+      "site_name": "academia.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "academia.stackexchange.com.7z",
+          "size_bytes": 198564136,
+          "format": "7z",
+          "md5": "5706c0588af14de4d8dc8e617bfa9a7d",
+          "mtime": 1712443640.0
+        }
+      },
+      "total_size_bytes": 198564136,
+      "file_count": 1,
+      "last_modified": 1712443640.0,
+      "total_size_mb": 189.37,
+      "size_category": "medium"
+    },
+    "ai.stackexchange.com": {
+      "site_name": "ai.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "ai.stackexchange.com.7z",
+          "size_bytes": 37062342,
+          "format": "7z",
+          "md5": "2fb5e5b6321826f4d61dc45b6d931608",
+          "mtime": 1712443941.0
+        }
+      },
+      "total_size_bytes": 37062342,
+      "file_count": 1,
+      "last_modified": 1712443941.0,
+      "total_size_mb": 35.35,
+      "size_category": "small"
+    },
+    "android.stackexchange.com": {
+      "site_name": "android.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "android.stackexchange.com.7z",
+          "size_bytes": 130988898,
+          "format": "7z",
+          "md5": "6164b2bc6fc0d11e3a6feda717e51afd",
+          "mtime": 1712443133.0
+        }
+      },
+      "total_size_bytes": 130988898,
+      "file_count": 1,
+      "last_modified": 1712443133.0,
+      "total_size_mb": 124.92,
+      "size_category": "medium"
+    },
+    "anime.stackexchange.com": {
+      "site_name": "anime.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "anime.stackexchange.com.7z",
+          "size_bytes": 38285884,
+          "format": "7z",
+          "md5": "88290700ebe81f370fe870187a68c5c9",
+          "mtime": 1712446672.0
+        }
+      },
+      "total_size_bytes": 38285884,
+      "file_count": 1,
+      "last_modified": 1712446672.0,
+      "total_size_mb": 36.51,
+      "size_category": "small"
+    },
+    "apple.stackexchange.com": {
+      "site_name": "apple.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "apple.stackexchange.com.7z",
+          "size_bytes": 312313283,
+          "format": "7z",
+          "md5": "5cb36a924af4c3c7d260e20da15db73e",
+          "mtime": 1712442312.0
+        }
+      },
+      "total_size_bytes": 312313283,
+      "file_count": 1,
+      "last_modified": 1712442312.0,
+      "total_size_mb": 297.85,
+      "size_category": "medium"
+    },
+    "arduino.stackexchange.com": {
+      "site_name": "arduino.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "arduino.stackexchange.com.7z",
+          "size_bytes": 79662691,
+          "format": "7z",
+          "md5": "651aed0fb932cd141fe822610591c259",
+          "mtime": 1712446386.0
+        }
+      },
+      "total_size_bytes": 79662691,
+      "file_count": 1,
+      "last_modified": 1712446386.0,
+      "total_size_mb": 75.97,
+      "size_category": "medium"
+    },
+    "askubuntu.com": {
+      "site_name": "askubuntu.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "askubuntu.com.7z",
+          "size_bytes": 1071610861,
+          "format": "7z",
+          "md5": "eb73b916968b8580e10f208941991eb3",
+          "mtime": 1712475834.0
+        }
+      },
+      "total_size_bytes": 1071610861,
+      "file_count": 1,
+      "last_modified": 1712475834.0,
+      "total_size_mb": 1021.97,
+      "size_category": "large"
+    },
+    "astronomy.stackexchange.com": {
+      "site_name": "astronomy.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "astronomy.stackexchange.com.7z",
+          "size_bytes": 51377534,
+          "format": "7z",
+          "md5": "8521dbec92a160f038e9c6a2db0281d3",
+          "mtime": 1712440476.0
+        }
+      },
+      "total_size_bytes": 51377534,
+      "file_count": 1,
+      "last_modified": 1712440476.0,
+      "total_size_mb": 49.0,
+      "size_category": "small"
+    },
+    "aviation.stackexchange.com": {
+      "site_name": "aviation.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "aviation.stackexchange.com.7z",
+          "size_bytes": 106672744,
+          "format": "7z",
+          "md5": "655080ea04950df9c1faf847018e8b13",
+          "mtime": 1712445575.0
+        }
+      },
+      "total_size_bytes": 106672744,
+      "file_count": 1,
+      "last_modified": 1712445575.0,
+      "total_size_mb": 101.73,
+      "size_category": "medium"
+    },
+    "avp.stackexchange.com": {
+      "site_name": "avp.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "avp.stackexchange.com.7z",
+          "size_bytes": 21944415,
+          "format": "7z",
+          "md5": "a659f15cdeec6c816614da268ef2eb19",
+          "mtime": 1712447810.0
+        }
+      },
+      "total_size_bytes": 21944415,
+      "file_count": 1,
+      "last_modified": 1712447810.0,
+      "total_size_mb": 20.93,
+      "size_category": "small"
+    },
+    "beer.stackexchange.com": {
+      "site_name": "beer.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "beer.stackexchange.com.7z",
+          "size_bytes": 4317770,
+          "format": "7z",
+          "md5": "5da8bd0067af280aeb53ebfd6b5e650d",
+          "mtime": 1712441403.0
+        }
+      },
+      "total_size_bytes": 4317770,
+      "file_count": 1,
+      "last_modified": 1712441403.0,
+      "total_size_mb": 4.12,
+      "size_category": "small"
+    },
+    "bicycles.stackexchange.com": {
+      "site_name": "bicycles.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "bicycles.stackexchange.com.7z",
+          "size_bytes": 81865054,
+          "format": "7z",
+          "md5": "5784e610bfd40795cd04d546842c2786",
+          "mtime": 1712445665.0
+        }
+      },
+      "total_size_bytes": 81865054,
+      "file_count": 1,
+      "last_modified": 1712445665.0,
+      "total_size_mb": 78.07,
+      "size_category": "medium"
+    },
+    "bioacoustics.stackexchange.com": {
+      "site_name": "bioacoustics.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "bioacoustics.stackexchange.com.7z",
+          "size_bytes": 1337018,
+          "format": "7z",
+          "md5": "ed6713cb0eb643ab33b6f9a9c4f64e99",
+          "mtime": 1712462488.0
+        }
+      },
+      "total_size_bytes": 1337018,
+      "file_count": 1,
+      "last_modified": 1712462488.0,
+      "total_size_mb": 1.28,
+      "size_category": "small"
+    },
+    "bioinformatics.stackexchange.com": {
+      "site_name": "bioinformatics.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "bioinformatics.stackexchange.com.7z",
+          "size_bytes": 17525174,
+          "format": "7z",
+          "md5": "650e83678af482ffcbaab670fb296a16",
+          "mtime": 1712441421.0
+        }
+      },
+      "total_size_bytes": 17525174,
+      "file_count": 1,
+      "last_modified": 1712441421.0,
+      "total_size_mb": 16.71,
+      "size_category": "small"
+    },
+    "biology.stackexchange.com": {
+      "site_name": "biology.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "biology.stackexchange.com.7z",
+          "size_bytes": 82571431,
+          "format": "7z",
+          "md5": "7de546b188985c71cd80fe8ba8564542",
+          "mtime": 1712445411.0
+        }
+      },
+      "total_size_bytes": 82571431,
+      "file_count": 1,
+      "last_modified": 1712445411.0,
+      "total_size_mb": 78.75,
+      "size_category": "medium"
+    },
+    "bitcoin.stackexchange.com": {
+      "site_name": "bitcoin.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "bitcoin.stackexchange.com.7z",
+          "size_bytes": 73805258,
+          "format": "7z",
+          "md5": "6202589e57c06fb1c307400d23938cd6",
+          "mtime": 1712446555.0
+        }
+      },
+      "total_size_bytes": 73805258,
+      "file_count": 1,
+      "last_modified": 1712446555.0,
+      "total_size_mb": 70.39,
+      "size_category": "medium"
+    },
+    "blender.stackexchange.com": {
+      "site_name": "blender.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "blender.stackexchange.com.7z",
+          "size_bytes": 201721102,
+          "format": "7z",
+          "md5": "8258d87984ffdc6f01d7ad9fee9928fb",
+          "mtime": 1712445295.0
+        }
+      },
+      "total_size_bytes": 201721102,
+      "file_count": 1,
+      "last_modified": 1712445295.0,
+      "total_size_mb": 192.38,
+      "size_category": "medium"
+    },
+    "boardgames.stackexchange.com": {
+      "site_name": "boardgames.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "boardgames.stackexchange.com.7z",
+          "size_bytes": 44504376,
+          "format": "7z",
+          "md5": "8990ecf65a0e091ce103562cf653121e",
+          "mtime": 1712446677.0
+        }
+      },
+      "total_size_bytes": 44504376,
+      "file_count": 1,
+      "last_modified": 1712446677.0,
+      "total_size_mb": 42.44,
+      "size_category": "small"
+    },
+    "bricks.stackexchange.com": {
+      "site_name": "bricks.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "bricks.stackexchange.com.7z",
+          "size_bytes": 11850565,
+          "format": "7z",
+          "md5": "2bd5ee823376294ad5a363962c2fa022",
+          "mtime": 1712447943.0
+        }
+      },
+      "total_size_bytes": 11850565,
+      "file_count": 1,
+      "last_modified": 1712447943.0,
+      "total_size_mb": 11.3,
+      "size_category": "small"
+    },
+    "buddhism.stackexchange.com": {
+      "site_name": "buddhism.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "buddhism.stackexchange.com.7z",
+          "size_bytes": 52072725,
+          "format": "7z",
+          "md5": "6d095ae48637ae163f57bcfacb4cf9d1",
+          "mtime": 1712442242.0
+        }
+      },
+      "total_size_bytes": 52072725,
+      "file_count": 1,
+      "last_modified": 1712442242.0,
+      "total_size_mb": 49.66,
+      "size_category": "small"
+    },
+    "cardano.stackexchange.com": {
+      "site_name": "cardano.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "cardano.stackexchange.com.7z",
+          "size_bytes": 5707482,
+          "format": "7z",
+          "md5": "a7cb51f84134b8d14cae2e05915d1d3c",
+          "mtime": 1712442130.0
+        }
+      },
+      "total_size_bytes": 5707482,
+      "file_count": 1,
+      "last_modified": 1712442130.0,
+      "total_size_mb": 5.44,
+      "size_category": "small"
+    },
+    "chemistry.stackexchange.com": {
+      "site_name": "chemistry.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "chemistry.stackexchange.com.7z",
+          "size_bytes": 126167549,
+          "format": "7z",
+          "md5": "7867484067bc7fccb595f1be36cb8e4d",
+          "mtime": 1712446051.0
+        }
+      },
+      "total_size_bytes": 126167549,
+      "file_count": 1,
+      "last_modified": 1712446051.0,
+      "total_size_mb": 120.32,
+      "size_category": "medium"
+    },
+    "chess.stackexchange.com": {
+      "site_name": "chess.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "chess.stackexchange.com.7z",
+          "size_bytes": 35733829,
+          "format": "7z",
+          "md5": "ac14066610773fb1df59dcc32ede05bf",
+          "mtime": 1712447104.0
+        }
+      },
+      "total_size_bytes": 35733829,
+      "file_count": 1,
+      "last_modified": 1712447104.0,
+      "total_size_mb": 34.08,
+      "size_category": "small"
+    },
+    "chinese.stackexchange.com": {
+      "site_name": "chinese.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "chinese.stackexchange.com.7z",
+          "size_bytes": 37168332,
+          "format": "7z",
+          "md5": "682a86fa78fd0b0e0a6ed5e99dd175d2",
+          "mtime": 1712447321.0
+        }
+      },
+      "total_size_bytes": 37168332,
+      "file_count": 1,
+      "last_modified": 1712447321.0,
+      "total_size_mb": 35.45,
+      "size_category": "small"
+    },
+    "christianity.stackexchange.com": {
+      "site_name": "christianity.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "christianity.stackexchange.com.7z",
+          "size_bytes": 125197318,
+          "format": "7z",
+          "md5": "7b62e98b94e9dd206768b6b596147fd3",
+          "mtime": 1712445729.0
+        }
+      },
+      "total_size_bytes": 125197318,
+      "file_count": 1,
+      "last_modified": 1712445729.0,
+      "total_size_mb": 119.4,
+      "size_category": "medium"
+    },
+    "civicrm.stackexchange.com": {
+      "site_name": "civicrm.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "civicrm.stackexchange.com.7z",
+          "size_bytes": 25745967,
+          "format": "7z",
+          "md5": "ee3908dc735b193406a817a2e74ccd96",
+          "mtime": 1712443780.0
+        }
+      },
+      "total_size_bytes": 25745967,
+      "file_count": 1,
+      "last_modified": 1712443780.0,
+      "total_size_mb": 24.55,
+      "size_category": "small"
+    },
+    "codegolf.stackexchange.com": {
+      "site_name": "codegolf.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "codegolf.stackexchange.com.7z",
+          "size_bytes": 374330171,
+          "format": "7z",
+          "md5": "b4bf2015567141e1fcbf3a3614eda012",
+          "mtime": 1712443467.0
+        }
+      },
+      "total_size_bytes": 374330171,
+      "file_count": 1,
+      "last_modified": 1712443467.0,
+      "total_size_mb": 356.99,
+      "size_category": "medium"
+    },
+    "codereview.stackexchange.com": {
+      "site_name": "codereview.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "codereview.stackexchange.com.7z",
+          "size_bytes": 508596604,
+          "format": "7z",
+          "md5": "4ab40486fc35958acf3ae86b273fa351",
+          "mtime": 1712444390.0
+        }
+      },
+      "total_size_bytes": 508596604,
+      "file_count": 1,
+      "last_modified": 1712444390.0,
+      "total_size_mb": 485.04,
+      "size_category": "medium"
+    },
+    "coffee.stackexchange.com": {
+      "site_name": "coffee.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "coffee.stackexchange.com.7z",
+          "size_bytes": 5095298,
+          "format": "7z",
+          "md5": "458d102b0d9083a5c0d53031f4b03af7",
+          "mtime": 1712440340.0
+        }
+      },
+      "total_size_bytes": 5095298,
+      "file_count": 1,
+      "last_modified": 1712440340.0,
+      "total_size_mb": 4.86,
+      "size_category": "small"
+    },
+    "cogsci.stackexchange.com": {
+      "site_name": "cogsci.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "cogsci.stackexchange.com.7z",
+          "size_bytes": 28031349,
+          "format": "7z",
+          "md5": "b17783c135a30199f84e20436dd44ab9",
+          "mtime": 1712447487.0
+        }
+      },
+      "total_size_bytes": 28031349,
+      "file_count": 1,
+      "last_modified": 1712447487.0,
+      "total_size_mb": 26.73,
+      "size_category": "small"
+    },
+    "computergraphics.stackexchange.com": {
+      "site_name": "computergraphics.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "computergraphics.stackexchange.com.7z",
+          "size_bytes": 12573559,
+          "format": "7z",
+          "md5": "7753acc67d9f4d80b37346caa4cfe71b",
+          "mtime": 1712441296.0
+        }
+      },
+      "total_size_bytes": 12573559,
+      "file_count": 1,
+      "last_modified": 1712441296.0,
+      "total_size_mb": 11.99,
+      "size_category": "small"
+    },
+    "conlang.stackexchange.com": {
+      "site_name": "conlang.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "conlang.stackexchange.com.7z",
+          "size_bytes": 2419265,
+          "format": "7z",
+          "md5": "71f25dd7079d25687a5c0a28357f8e45",
+          "mtime": 1712439834.0
+        }
+      },
+      "total_size_bytes": 2419265,
+      "file_count": 1,
+      "last_modified": 1712439834.0,
+      "total_size_mb": 2.31,
+      "size_category": "small"
+    },
+    "cooking.stackexchange.com": {
+      "site_name": "cooking.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "cooking.stackexchange.com.7z",
+          "size_bytes": 87555311,
+          "format": "7z",
+          "md5": "f6ffe54c3783c8faebc33b30f8ff61d1",
+          "mtime": 1712443098.0
+        }
+      },
+      "total_size_bytes": 87555311,
+      "file_count": 1,
+      "last_modified": 1712443098.0,
+      "total_size_mb": 83.5,
+      "size_category": "medium"
+    },
+    "craftcms.stackexchange.com": {
+      "site_name": "craftcms.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "craftcms.stackexchange.com.7z",
+          "size_bytes": 25561985,
+          "format": "7z",
+          "md5": "805f15d6623b34c771541d0444dea06a",
+          "mtime": 1712441689.0
+        }
+      },
+      "total_size_bytes": 25561985,
+      "file_count": 1,
+      "last_modified": 1712441689.0,
+      "total_size_mb": 24.38,
+      "size_category": "small"
+    },
+    "crafts.stackexchange.com": {
+      "site_name": "crafts.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "crafts.stackexchange.com.7z",
+          "size_bytes": 8667456,
+          "format": "7z",
+          "md5": "da28b38d3395bf1c86099584f3b8087c",
+          "mtime": 1712440934.0
+        }
+      },
+      "total_size_bytes": 8667456,
+      "file_count": 1,
+      "last_modified": 1712440934.0,
+      "total_size_mb": 8.27,
+      "size_category": "small"
+    },
+    "crypto.stackexchange.com": {
+      "site_name": "crypto.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "crypto.stackexchange.com.7z",
+          "size_bytes": 104069150,
+          "format": "7z",
+          "md5": "cfcff5f42412030411fbf65715575424",
+          "mtime": 1712446323.0
+        }
+      },
+      "total_size_bytes": 104069150,
+      "file_count": 1,
+      "last_modified": 1712446323.0,
+      "total_size_mb": 99.25,
+      "size_category": "medium"
+    },
+    "cs.stackexchange.com": {
+      "site_name": "cs.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "cs.stackexchange.com.7z",
+          "size_bytes": 130990559,
+          "format": "7z",
+          "md5": "f7cb3c523ae1a4ed1c341faeb2e6d3c9",
+          "mtime": 1712441362.0
+        }
+      },
+      "total_size_bytes": 130990559,
+      "file_count": 1,
+      "last_modified": 1712441362.0,
+      "total_size_mb": 124.92,
+      "size_category": "medium"
+    },
+    "cseducators.stackexchange.com": {
+      "site_name": "cseducators.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "cseducators.stackexchange.com.7z",
+          "size_bytes": 10667427,
+          "format": "7z",
+          "md5": "613c878494f8267ec682624741e54b27",
+          "mtime": 1712441171.0
+        }
+      },
+      "total_size_bytes": 10667427,
+      "file_count": 1,
+      "last_modified": 1712441171.0,
+      "total_size_mb": 10.17,
+      "size_category": "small"
+    },
+    "cstheory.stackexchange.com": {
+      "site_name": "cstheory.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "cstheory.stackexchange.com.7z",
+          "size_bytes": 44836938,
+          "format": "7z",
+          "md5": "32c527f5917f30c14c2ccbbcc61d15b6",
+          "mtime": 1712446933.0
+        }
+      },
+      "total_size_bytes": 44836938,
+      "file_count": 1,
+      "last_modified": 1712446933.0,
+      "total_size_mb": 42.76,
+      "size_category": "small"
+    },
+    "datascience.stackexchange.com": {
+      "site_name": "datascience.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "datascience.stackexchange.com.7z",
+          "size_bytes": 89531447,
+          "format": "7z",
+          "md5": "e9362d731c9180ea384236dabbe0b939",
+          "mtime": 1712472459.0
+        }
+      },
+      "total_size_bytes": 89531447,
+      "file_count": 1,
+      "last_modified": 1712472459.0,
+      "total_size_mb": 85.38,
+      "size_category": "medium"
+    },
+    "dba.stackexchange.com": {
+      "site_name": "dba.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "dba.stackexchange.com.7z",
+          "size_bytes": 319345462,
+          "format": "7z",
+          "md5": "d0f417b3c3c9210ed32623a071651411",
+          "mtime": 1712442228.0
+        }
+      },
+      "total_size_bytes": 319345462,
+      "file_count": 1,
+      "last_modified": 1712442228.0,
+      "total_size_mb": 304.55,
+      "size_category": "medium"
+    },
+    "devops.stackexchange.com": {
+      "site_name": "devops.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "devops.stackexchange.com.7z",
+          "size_bytes": 16771120,
+          "format": "7z",
+          "md5": "c67ec48509355e43d7ee83001e88118b",
+          "mtime": 1712465809.0
+        }
+      },
+      "total_size_bytes": 16771120,
+      "file_count": 1,
+      "last_modified": 1712465809.0,
+      "total_size_mb": 15.99,
+      "size_category": "small"
+    },
+    "diy.stackexchange.com": {
+      "site_name": "diy.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "diy.stackexchange.com.7z",
+          "size_bytes": 227459493,
+          "format": "7z",
+          "md5": "14090ed995204f4966b30abc4dfc090a",
+          "mtime": 1712469360.0
+        }
+      },
+      "total_size_bytes": 227459493,
+      "file_count": 1,
+      "last_modified": 1712469360.0,
+      "total_size_mb": 216.92,
+      "size_category": "medium"
+    },
+    "drones.stackexchange.com": {
+      "site_name": "drones.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "drones.stackexchange.com.7z",
+          "size_bytes": 2461137,
+          "format": "7z",
+          "md5": "ff96ec88f471bdf6a22baac11c3c1900",
+          "mtime": 1712439062.0
+        }
+      },
+      "total_size_bytes": 2461137,
+      "file_count": 1,
+      "last_modified": 1712439062.0,
+      "total_size_mb": 2.35,
+      "size_category": "small"
+    },
+    "drupal.stackexchange.com": {
+      "site_name": "drupal.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "drupal.stackexchange.com.7z",
+          "size_bytes": 178662680,
+          "format": "7z",
+          "md5": "4fa8f017fc95809f828a3e7b9717c779",
+          "mtime": 1712445735.0
+        }
+      },
+      "total_size_bytes": 178662680,
+      "file_count": 1,
+      "last_modified": 1712445735.0,
+      "total_size_mb": 170.39,
+      "size_category": "medium"
+    },
+    "dsp.stackexchange.com": {
+      "site_name": "dsp.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "dsp.stackexchange.com.7z",
+          "size_bytes": 85806642,
+          "format": "7z",
+          "md5": "78cba0a7f66a211b0876cae740bc7762",
+          "mtime": 1712445918.0
+        }
+      },
+      "total_size_bytes": 85806642,
+      "file_count": 1,
+      "last_modified": 1712445918.0,
+      "total_size_mb": 81.83,
+      "size_category": "medium"
+    },
+    "earthscience.stackexchange.com": {
+      "site_name": "earthscience.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "earthscience.stackexchange.com.7z",
+          "size_bytes": 22753550,
+          "format": "7z",
+          "md5": "7f468d7545b535ef95d60436bc9b0a43",
+          "mtime": 1712441846.0
+        }
+      },
+      "total_size_bytes": 22753550,
+      "file_count": 1,
+      "last_modified": 1712441846.0,
+      "total_size_mb": 21.7,
+      "size_category": "small"
+    },
+    "ebooks.stackexchange.com": {
+      "site_name": "ebooks.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "ebooks.stackexchange.com.7z",
+          "size_bytes": 4864031,
+          "format": "7z",
+          "md5": "54b8894a32743d893647801555ec1e7e",
+          "mtime": 1712448137.0
+        }
+      },
+      "total_size_bytes": 4864031,
+      "file_count": 1,
+      "last_modified": 1712448137.0,
+      "total_size_mb": 4.64,
+      "size_category": "small"
+    },
+    "economics.stackexchange.com": {
+      "site_name": "economics.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "economics.stackexchange.com.7z",
+          "size_bytes": 43732829,
+          "format": "7z",
+          "md5": "6d64f7e0ced2bd6e24080ff54e153635",
+          "mtime": 1712442331.0
+        }
+      },
+      "total_size_bytes": 43732829,
+      "file_count": 1,
+      "last_modified": 1712442331.0,
+      "total_size_mb": 41.71,
+      "size_category": "small"
+    },
+    "electronics.stackexchange.com": {
+      "site_name": "electronics.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "electronics.stackexchange.com.7z",
+          "size_bytes": 637518528,
+          "format": "7z",
+          "md5": "900a3785dd85303ffa224fae28b03489",
+          "mtime": 1712441704.0
+        }
+      },
+      "total_size_bytes": 637518528,
+      "file_count": 1,
+      "last_modified": 1712441704.0,
+      "total_size_mb": 607.99,
+      "size_category": "large"
+    },
+    "elementaryos.stackexchange.com": {
+      "site_name": "elementaryos.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "elementaryos.stackexchange.com.7z",
+          "size_bytes": 15343127,
+          "format": "7z",
+          "md5": "a81246d7fe4ef3727c30b052c0267f2f",
+          "mtime": 1712465671.0
+        }
+      },
+      "total_size_bytes": 15343127,
+      "file_count": 1,
+      "last_modified": 1712465671.0,
+      "total_size_mb": 14.63,
+      "size_category": "small"
+    },
+    "ell.stackexchange.com": {
+      "site_name": "ell.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "ell.stackexchange.com.7z",
+          "size_bytes": 236946427,
+          "format": "7z",
+          "md5": "36971aedb6face24a116929a1b1e5380",
+          "mtime": 1712444845.0
+        }
+      },
+      "total_size_bytes": 236946427,
+      "file_count": 1,
+      "last_modified": 1712444845.0,
+      "total_size_mb": 225.97,
+      "size_category": "medium"
+    },
+    "emacs.stackexchange.com": {
+      "site_name": "emacs.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "emacs.stackexchange.com.7z",
+          "size_bytes": 61053450,
+          "format": "7z",
+          "md5": "0ee40f5742b762a9c47cdbfbb5fbcce4",
+          "mtime": 1712467117.0
+        }
+      },
+      "total_size_bytes": 61053450,
+      "file_count": 1,
+      "last_modified": 1712467117.0,
+      "total_size_mb": 58.23,
+      "size_category": "medium"
+    },
+    "engineering.stackexchange.com": {
+      "site_name": "engineering.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "engineering.stackexchange.com.7z",
+          "size_bytes": 43495387,
+          "format": "7z",
+          "md5": "20c021162f50d8a855bd72bcaacb1323",
+          "mtime": 1712466299.0
+        }
+      },
+      "total_size_bytes": 43495387,
+      "file_count": 1,
+      "last_modified": 1712466299.0,
+      "total_size_mb": 41.48,
+      "size_category": "small"
+    },
+    "english.stackexchange.com": {
+      "site_name": "english.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "english.stackexchange.com.7z",
+          "size_bytes": 450588828,
+          "format": "7z",
+          "md5": "f68ae021580d3b5de5b6a0a527abd30a",
+          "mtime": 1712445880.0
+        }
+      },
+      "total_size_bytes": 450588828,
+      "file_count": 1,
+      "last_modified": 1712445880.0,
+      "total_size_mb": 429.71,
+      "size_category": "medium"
+    },
+    "eosio.stackexchange.com": {
+      "site_name": "eosio.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "eosio.stackexchange.com.7z",
+          "size_bytes": 4597493,
+          "format": "7z",
+          "md5": "52ab3f31413230edd187493dee7ad183",
+          "mtime": 1712467870.0
+        }
+      },
+      "total_size_bytes": 4597493,
+      "file_count": 1,
+      "last_modified": 1712467870.0,
+      "total_size_mb": 4.38,
+      "size_category": "small"
+    },
+    "esperanto.stackexchange.com": {
+      "site_name": "esperanto.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "esperanto.stackexchange.com.7z",
+          "size_bytes": 4626049,
+          "format": "7z",
+          "md5": "673fdbd257301841d23dde88849930e6",
+          "mtime": 1712440638.0
+        }
+      },
+      "total_size_bytes": 4626049,
+      "file_count": 1,
+      "last_modified": 1712440638.0,
+      "total_size_mb": 4.41,
+      "size_category": "small"
+    },
+    "ethereum.stackexchange.com": {
+      "site_name": "ethereum.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "ethereum.stackexchange.com.7z",
+          "size_bytes": 107238652,
+          "format": "7z",
+          "md5": "6a00e03afcd4175cabdb799bef0602b7",
+          "mtime": 1712446180.0
+        }
+      },
+      "total_size_bytes": 107238652,
+      "file_count": 1,
+      "last_modified": 1712446180.0,
+      "total_size_mb": 102.27,
+      "size_category": "medium"
+    },
+    "expatriates.stackexchange.com": {
+      "site_name": "expatriates.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "expatriates.stackexchange.com.7z",
+          "size_bytes": 17900034,
+          "format": "7z",
+          "md5": "807e5155e7fcd440b4fe9c4d56dc1428",
+          "mtime": 1712442711.0
+        }
+      },
+      "total_size_bytes": 17900034,
+      "file_count": 1,
+      "last_modified": 1712442711.0,
+      "total_size_mb": 17.07,
+      "size_category": "small"
+    },
+    "expressionengine.stackexchange.com": {
+      "site_name": "expressionengine.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "expressionengine.stackexchange.com.7z",
+          "size_bytes": 21659777,
+          "format": "7z",
+          "md5": "c12d4152644f913847abfa3b390fa2b4",
+          "mtime": 1712447954.0
+        }
+      },
+      "total_size_bytes": 21659777,
+      "file_count": 1,
+      "last_modified": 1712447954.0,
+      "total_size_mb": 20.66,
+      "size_category": "small"
+    },
+    "fitness.stackexchange.com": {
+      "site_name": "fitness.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "fitness.stackexchange.com.7z",
+          "size_bytes": 34959036,
+          "format": "7z",
+          "md5": "ea5849aa520a43a9d16fa5a31666992a",
+          "mtime": 1712446845.0
+        }
+      },
+      "total_size_bytes": 34959036,
+      "file_count": 1,
+      "last_modified": 1712446845.0,
+      "total_size_mb": 33.34,
+      "size_category": "small"
+    },
+    "freelancing.stackexchange.com": {
+      "site_name": "freelancing.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "freelancing.stackexchange.com.7z",
+          "size_bytes": 9473390,
+          "format": "7z",
+          "md5": "c213b10aaf2fa871729543985e493f21",
+          "mtime": 1712448034.0
+        }
+      },
+      "total_size_bytes": 9473390,
+      "file_count": 1,
+      "last_modified": 1712448034.0,
+      "total_size_mb": 9.03,
+      "size_category": "small"
+    },
+    "french.stackexchange.com": {
+      "site_name": "french.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "french.stackexchange.com.7z",
+          "size_bytes": 45979440,
+          "format": "7z",
+          "md5": "762277dd6061b006a4ed236bc34beb56",
+          "mtime": 1712447468.0
+        }
+      },
+      "total_size_bytes": 45979440,
+      "file_count": 1,
+      "last_modified": 1712447468.0,
+      "total_size_mb": 43.85,
+      "size_category": "small"
+    },
+    "gamedev.stackexchange.com": {
+      "site_name": "gamedev.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "gamedev.stackexchange.com.7z",
+          "size_bytes": 184203254,
+          "format": "7z",
+          "md5": "ee65a37af31c34c41aff326842ca1454",
+          "mtime": 1712468494.0
+        }
+      },
+      "total_size_bytes": 184203254,
+      "file_count": 1,
+      "last_modified": 1712468494.0,
+      "total_size_mb": 175.67,
+      "size_category": "medium"
+    },
+    "gaming.stackexchange.com": {
+      "site_name": "gaming.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "gaming.stackexchange.com.7z",
+          "size_bytes": 241256276,
+          "format": "7z",
+          "md5": "94c3a20e7a6599dbe95141ae495cf704",
+          "mtime": 1712444626.0
+        }
+      },
+      "total_size_bytes": 241256276,
+      "file_count": 1,
+      "last_modified": 1712444626.0,
+      "total_size_mb": 230.08,
+      "size_category": "medium"
+    },
+    "gardening.stackexchange.com": {
+      "site_name": "gardening.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "gardening.stackexchange.com.7z",
+          "size_bytes": 43596356,
+          "format": "7z",
+          "md5": "9b2fb873459d516d6d48beff4e6a610f",
+          "mtime": 1712447652.0
+        }
+      },
+      "total_size_bytes": 43596356,
+      "file_count": 1,
+      "last_modified": 1712447652.0,
+      "total_size_mb": 41.58,
+      "size_category": "small"
+    },
+    "genai.stackexchange.com": {
+      "site_name": "genai.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "genai.stackexchange.com.7z",
+          "size_bytes": 848047,
+          "format": "7z",
+          "md5": "f7c91790137155de5bcd78232dfc6238",
+          "mtime": 1712439119.0
+        }
+      },
+      "total_size_bytes": 848047,
+      "file_count": 1,
+      "last_modified": 1712439119.0,
+      "total_size_mb": 0.81,
+      "size_category": "small"
+    },
+    "genealogy.stackexchange.com": {
+      "site_name": "genealogy.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "genealogy.stackexchange.com.7z",
+          "size_bytes": 15332185,
+          "format": "7z",
+          "md5": "6439a8d2e36b3c01de4c10f66530e506",
+          "mtime": 1712447922.0
+        }
+      },
+      "total_size_bytes": 15332185,
+      "file_count": 1,
+      "last_modified": 1712447922.0,
+      "total_size_mb": 14.62,
+      "size_category": "small"
+    },
+    "german.stackexchange.com": {
+      "site_name": "german.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "german.stackexchange.com.7z",
+          "size_bytes": 66002512,
+          "format": "7z",
+          "md5": "9f82931ba434c56c7f917e013ec4c7ab",
+          "mtime": 1712446485.0
+        }
+      },
+      "total_size_bytes": 66002512,
+      "file_count": 1,
+      "last_modified": 1712446485.0,
+      "total_size_mb": 62.94,
+      "size_category": "medium"
+    },
+    "gis.stackexchange.com": {
+      "site_name": "gis.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "gis.stackexchange.com.7z",
+          "size_bytes": 388363772,
+          "format": "7z",
+          "md5": "01e2bcc031ddc3403c7fa55b8a35ba50",
+          "mtime": 1712444972.0
+        }
+      },
+      "total_size_bytes": 388363772,
+      "file_count": 1,
+      "last_modified": 1712444972.0,
+      "total_size_mb": 370.37,
+      "size_category": "medium"
+    },
+    "graphicdesign.stackexchange.com": {
+      "site_name": "graphicdesign.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "graphicdesign.stackexchange.com.7z",
+          "size_bytes": 103859494,
+          "format": "7z",
+          "md5": "8d48a76017d70298bdda9bd87cea158b",
+          "mtime": 1712444908.0
+        }
+      },
+      "total_size_bytes": 103859494,
+      "file_count": 1,
+      "last_modified": 1712444908.0,
+      "total_size_mb": 99.05,
+      "size_category": "medium"
+    },
+    "ham.stackexchange.com": {
+      "site_name": "ham.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "ham.stackexchange.com.7z",
+          "size_bytes": 18257281,
+          "format": "7z",
+          "md5": "a232639e9e0e767625628a47db499906",
+          "mtime": 1712447794.0
+        }
+      },
+      "total_size_bytes": 18257281,
+      "file_count": 1,
+      "last_modified": 1712447794.0,
+      "total_size_mb": 17.41,
+      "size_category": "small"
+    },
+    "hardwarerecs.stackexchange.com": {
+      "site_name": "hardwarerecs.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "hardwarerecs.stackexchange.com.7z",
+          "size_bytes": 11206862,
+          "format": "7z",
+          "md5": "e4d1a8e145fcb8e41a2382f72c369933",
+          "mtime": 1712443400.0
+        }
+      },
+      "total_size_bytes": 11206862,
+      "file_count": 1,
+      "last_modified": 1712443400.0,
+      "total_size_mb": 10.69,
+      "size_category": "small"
+    },
+    "health.stackexchange.com": {
+      "site_name": "health.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "health.stackexchange.com.7z",
+          "size_bytes": 22447982,
+          "format": "7z",
+          "md5": "c3c4126f92ac6b9990c844da969651f1",
+          "mtime": 1712441992.0
+        }
+      },
+      "total_size_bytes": 22447982,
+      "file_count": 1,
+      "last_modified": 1712441992.0,
+      "total_size_mb": 21.41,
+      "size_category": "small"
+    },
+    "hermeneutics.stackexchange.com": {
+      "site_name": "hermeneutics.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "hermeneutics.stackexchange.com.7z",
+          "size_bytes": 120677684,
+          "format": "7z",
+          "md5": "1e4fee5ce927776d0db89f88cd0a1b69",
+          "mtime": 1712442607.0
+        }
+      },
+      "total_size_bytes": 120677684,
+      "file_count": 1,
+      "last_modified": 1712442607.0,
+      "total_size_mb": 115.09,
+      "size_category": "medium"
+    },
+    "hinduism.stackexchange.com": {
+      "site_name": "hinduism.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "hinduism.stackexchange.com.7z",
+          "size_bytes": 72227684,
+          "format": "7z",
+          "md5": "f5f5f452961b68bccd1c580cbfe5ed31",
+          "mtime": 1712466866.0
+        }
+      },
+      "total_size_bytes": 72227684,
+      "file_count": 1,
+      "last_modified": 1712466866.0,
+      "total_size_mb": 68.88,
+      "size_category": "medium"
+    },
+    "history.stackexchange.com": {
+      "site_name": "history.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "history.stackexchange.com.7z",
+          "size_bytes": 93459545,
+          "format": "7z",
+          "md5": "7c3593e8ffbb3214445e3232b1f54528",
+          "mtime": 1712446009.0
+        }
+      },
+      "total_size_bytes": 93459545,
+      "file_count": 1,
+      "last_modified": 1712446009.0,
+      "total_size_mb": 89.13,
+      "size_category": "medium"
+    },
+    "homebrew.stackexchange.com": {
+      "site_name": "homebrew.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "homebrew.stackexchange.com.7z",
+          "size_bytes": 16637684,
+          "format": "7z",
+          "md5": "7e286178bc6e05d21f796d0e235d3caa",
+          "mtime": 1712442466.0
+        }
+      },
+      "total_size_bytes": 16637684,
+      "file_count": 1,
+      "last_modified": 1712442466.0,
+      "total_size_mb": 15.87,
+      "size_category": "small"
+    },
+    "hsm.stackexchange.com": {
+      "site_name": "hsm.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "hsm.stackexchange.com.7z",
+          "size_bytes": 18128861,
+          "format": "7z",
+          "md5": "647dd769a1ebcc5eb3d6d0d30a17b850",
+          "mtime": 1712441304.0
+        }
+      },
+      "total_size_bytes": 18128861,
+      "file_count": 1,
+      "last_modified": 1712441304.0,
+      "total_size_mb": 17.29,
+      "size_category": "small"
+    },
+    "interpersonal.stackexchange.com": {
+      "site_name": "interpersonal.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "interpersonal.stackexchange.com.7z",
+          "size_bytes": 36147734,
+          "format": "7z",
+          "md5": "2390b10608872b1cc9dba42b56873024",
+          "mtime": 1712442438.0
+        }
+      },
+      "total_size_bytes": 36147734,
+      "file_count": 1,
+      "last_modified": 1712442438.0,
+      "total_size_mb": 34.47,
+      "size_category": "small"
+    },
+    "iot.stackexchange.com": {
+      "site_name": "iot.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "iot.stackexchange.com.7z",
+          "size_bytes": 7538549,
+          "format": "7z",
+          "md5": "851051648e0807607611c7e51ac424f2",
+          "mtime": 1712465262.0
+        }
+      },
+      "total_size_bytes": 7538549,
+      "file_count": 1,
+      "last_modified": 1712465262.0,
+      "total_size_mb": 7.19,
+      "size_category": "small"
+    },
+    "iota.stackexchange.com": {
+      "site_name": "iota.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "iota.stackexchange.com.7z",
+          "size_bytes": 2354911,
+          "format": "7z",
+          "md5": "d53a8504bf24ff7f34f50192b6d3ef0e",
+          "mtime": 1712463808.0
+        }
+      },
+      "total_size_bytes": 2354911,
+      "file_count": 1,
+      "last_modified": 1712463808.0,
+      "total_size_mb": 2.25,
+      "size_category": "small"
+    },
+    "islam.stackexchange.com": {
+      "site_name": "islam.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "islam.stackexchange.com.7z",
+          "size_bytes": 54713674,
+          "format": "7z",
+          "md5": "6a3cdba17bca892c96a64ec90abc89a1",
+          "mtime": 1712440975.0
+        }
+      },
+      "total_size_bytes": 54713674,
+      "file_count": 1,
+      "last_modified": 1712440975.0,
+      "total_size_mb": 52.18,
+      "size_category": "medium"
+    },
+    "italian.stackexchange.com": {
+      "site_name": "italian.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "italian.stackexchange.com.7z",
+          "size_bytes": 11102757,
+          "format": "7z",
+          "md5": "c444cb6454040ffc02e1524669b83357",
+          "mtime": 1712448200.0
+        }
+      },
+      "total_size_bytes": 11102757,
+      "file_count": 1,
+      "last_modified": 1712448200.0,
+      "total_size_mb": 10.59,
+      "size_category": "small"
+    },
+    "japanese.stackexchange.com": {
+      "site_name": "japanese.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "japanese.stackexchange.com.7z",
+          "size_bytes": 71906152,
+          "format": "7z",
+          "md5": "9e903379b6848d1e5af9d00b46176bab",
+          "mtime": 1712446805.0
+        }
+      },
+      "total_size_bytes": 71906152,
+      "file_count": 1,
+      "last_modified": 1712446805.0,
+      "total_size_mb": 68.58,
+      "size_category": "medium"
+    },
+    "joomla.stackexchange.com": {
+      "site_name": "joomla.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "joomla.stackexchange.com.7z",
+          "size_bytes": 18276737,
+          "format": "7z",
+          "md5": "db3564c46ad58006935bd2162a7119fb",
+          "mtime": 1712441486.0
+        }
+      },
+      "total_size_bytes": 18276737,
+      "file_count": 1,
+      "last_modified": 1712441486.0,
+      "total_size_mb": 17.43,
+      "size_category": "small"
+    },
+    "judaism.stackexchange.com": {
+      "site_name": "judaism.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "judaism.stackexchange.com.7z",
+          "size_bytes": 139027647,
+          "format": "7z",
+          "md5": "1add4bb2a8360aa25a57b08c2fb88df5",
+          "mtime": 1712445908.0
+        }
+      },
+      "total_size_bytes": 139027647,
+      "file_count": 1,
+      "last_modified": 1712445908.0,
+      "total_size_mb": 132.59,
+      "size_category": "medium"
+    },
+    "korean.stackexchange.com": {
+      "site_name": "korean.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "korean.stackexchange.com.7z",
+          "size_bytes": 5305513,
+          "format": "7z",
+          "md5": "a06a3d3598043d4a73dad662fe8dc8f5",
+          "mtime": 1712440387.0
+        }
+      },
+      "total_size_bytes": 5305513,
+      "file_count": 1,
+      "last_modified": 1712440387.0,
+      "total_size_mb": 5.06,
+      "size_category": "small"
+    },
+    "langdev.stackexchange.com": {
+      "site_name": "langdev.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "langdev.stackexchange.com.7z",
+          "size_bytes": 5391328,
+          "format": "7z",
+          "md5": "58bcf4e7518966ffc6edb5ac73c2f737",
+          "mtime": 1712439156.0
+        }
+      },
+      "total_size_bytes": 5391328,
+      "file_count": 1,
+      "last_modified": 1712439156.0,
+      "total_size_mb": 5.14,
+      "size_category": "small"
+    },
+    "languagelearning.stackexchange.com": {
+      "site_name": "languagelearning.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "languagelearning.stackexchange.com.7z",
+          "size_bytes": 5075900,
+          "format": "7z",
+          "md5": "a2be146ede3837285f5e026405c8735f",
+          "mtime": 1712464251.0
+        }
+      },
+      "total_size_bytes": 5075900,
+      "file_count": 1,
+      "last_modified": 1712464251.0,
+      "total_size_mb": 4.84,
+      "size_category": "small"
+    },
+    "latin.stackexchange.com": {
+      "site_name": "latin.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "latin.stackexchange.com.7z",
+          "size_bytes": 21974525,
+          "format": "7z",
+          "md5": "04e89389f044c23518cd2d9646c4ae4a",
+          "mtime": 1712443678.0
+        }
+      },
+      "total_size_bytes": 21974525,
+      "file_count": 1,
+      "last_modified": 1712443678.0,
+      "total_size_mb": 20.96,
+      "size_category": "small"
+    },
+    "law.stackexchange.com": {
+      "site_name": "law.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "law.stackexchange.com.7z",
+          "size_bytes": 103470504,
+          "format": "7z",
+          "md5": "e2b276e10261499242f902dad8fcc740",
+          "mtime": 1712442634.0
+        }
+      },
+      "total_size_bytes": 103470504,
+      "file_count": 1,
+      "last_modified": 1712442634.0,
+      "total_size_mb": 98.68,
+      "size_category": "medium"
+    },
+    "lifehacks.stackexchange.com": {
+      "site_name": "lifehacks.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "lifehacks.stackexchange.com.7z",
+          "size_bytes": 14214166,
+          "format": "7z",
+          "md5": "5c19004e709f7f715361503fa5901a65",
+          "mtime": 1712441608.0
+        }
+      },
+      "total_size_bytes": 14214166,
+      "file_count": 1,
+      "last_modified": 1712441608.0,
+      "total_size_mb": 13.56,
+      "size_category": "small"
+    },
+    "linguistics.stackexchange.com": {
+      "site_name": "linguistics.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "linguistics.stackexchange.com.7z",
+          "size_bytes": 40912941,
+          "format": "7z",
+          "md5": "e6896302e8febb71f0f6e7ecfa5909fb",
+          "mtime": 1712447466.0
+        }
+      },
+      "total_size_bytes": 40912941,
+      "file_count": 1,
+      "last_modified": 1712447466.0,
+      "total_size_mb": 39.02,
+      "size_category": "small"
+    },
+    "literature.stackexchange.com": {
+      "site_name": "literature.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "literature.stackexchange.com.7z",
+          "size_bytes": 27905063,
+          "format": "7z",
+          "md5": "c889333a4fe23aeb6b1ebd995e99ed40",
+          "mtime": 1712441689.0
+        }
+      },
+      "total_size_bytes": 27905063,
+      "file_count": 1,
+      "last_modified": 1712441689.0,
+      "total_size_mb": 26.61,
+      "size_category": "small"
+    },
+    "magento.stackexchange.com": {
+      "site_name": "magento.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "magento.stackexchange.com.7z",
+          "size_bytes": 226384383,
+          "format": "7z",
+          "md5": "18135c77f7ea8f25f288982385c88781",
+          "mtime": 1712444149.0
+        }
+      },
+      "total_size_bytes": 226384383,
+      "file_count": 1,
+      "last_modified": 1712444149.0,
+      "total_size_mb": 215.9,
+      "size_category": "medium"
+    },
+    "martialarts.stackexchange.com": {
+      "site_name": "martialarts.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "martialarts.stackexchange.com.7z",
+          "size_bytes": 13599943,
+          "format": "7z",
+          "md5": "0b0bda74eba129802e0b6f4b88d79153",
+          "mtime": 1712448730.0
+        }
+      },
+      "total_size_bytes": 13599943,
+      "file_count": 1,
+      "last_modified": 1712448730.0,
+      "total_size_mb": 12.97,
+      "size_category": "small"
+    },
+    "materials.stackexchange.com": {
+      "site_name": "materials.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "materials.stackexchange.com.7z",
+          "size_bytes": 12399128,
+          "format": "7z",
+          "md5": "b94591d545ecf85fe68a6cf1bf12a9ec",
+          "mtime": 1712465392.0
+        }
+      },
+      "total_size_bytes": 12399128,
+      "file_count": 1,
+      "last_modified": 1712465392.0,
+      "total_size_mb": 11.82,
+      "size_category": "small"
+    },
+    "math.stackexchange.com": {
+      "site_name": "math.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "math.stackexchange.com.7z",
+          "size_bytes": 3629699855,
+          "format": "7z",
+          "md5": "fe8e2fcdeb19c6b58840da0c781e4115",
+          "mtime": 1712456289.0
+        }
+      },
+      "total_size_bytes": 3629699855,
+      "file_count": 1,
+      "last_modified": 1712456289.0,
+      "total_size_mb": 3461.55,
+      "size_category": "large"
+    },
+    "matheducators.stackexchange.com": {
+      "site_name": "matheducators.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "matheducators.stackexchange.com.7z",
+          "size_bytes": 26139844,
+          "format": "7z",
+          "md5": "20849dbcc19c352bd80bff7dcad47452",
+          "mtime": 1712441565.0
+        }
+      },
+      "total_size_bytes": 26139844,
+      "file_count": 1,
+      "last_modified": 1712441565.0,
+      "total_size_mb": 24.93,
+      "size_category": "small"
+    },
+    "mathematica.stackexchange.com": {
+      "site_name": "mathematica.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "mathematica.stackexchange.com.7z",
+          "size_bytes": 291712341,
+          "format": "7z",
+          "md5": "b397897845e772cbd9d76d3798d7c720",
+          "mtime": 1712439664.0
+        }
+      },
+      "total_size_bytes": 291712341,
+      "file_count": 1,
+      "last_modified": 1712439664.0,
+      "total_size_mb": 278.2,
+      "size_category": "medium"
+    },
+    "mathoverflow.net": {
+      "site_name": "mathoverflow.net",
+      "tables": {
+        "complete_archive": {
+          "filename": "mathoverflow.net.7z",
+          "size_bytes": 510436127,
+          "format": "7z",
+          "md5": "01ae82cb94d3ab41466629b5eb3f3d78",
+          "mtime": 1712442552.0
+        }
+      },
+      "total_size_bytes": 510436127,
+      "file_count": 1,
+      "last_modified": 1712442552.0,
+      "total_size_mb": 486.79,
+      "size_category": "medium"
+    },
+    "mechanics.stackexchange.com": {
+      "site_name": "mechanics.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "mechanics.stackexchange.com.7z",
+          "size_bytes": 65574895,
+          "format": "7z",
+          "md5": "c1aedc402bac3cbc90e741e0c4d0ba0e",
+          "mtime": 1712441575.0
+        }
+      },
+      "total_size_bytes": 65574895,
+      "file_count": 1,
+      "last_modified": 1712441575.0,
+      "total_size_mb": 62.54,
+      "size_category": "medium"
+    },
+    "moderators.stackexchange.com": {
+      "site_name": "moderators.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "moderators.stackexchange.com.7z",
+          "size_bytes": 3286131,
+          "format": "7z",
+          "md5": "761b27884a2db269a6f7c26929306358",
+          "mtime": 1712440082.0
+        }
+      },
+      "total_size_bytes": 3286131,
+      "file_count": 1,
+      "last_modified": 1712440082.0,
+      "total_size_mb": 3.13,
+      "size_category": "small"
+    },
+    "monero.stackexchange.com": {
+      "site_name": "monero.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "monero.stackexchange.com.7z",
+          "size_bytes": 8918406,
+          "format": "7z",
+          "md5": "5f15bc74ea92de025f355939fe217654",
+          "mtime": 1712465137.0
+        }
+      },
+      "total_size_bytes": 8918406,
+      "file_count": 1,
+      "last_modified": 1712465137.0,
+      "total_size_mb": 8.51,
+      "size_category": "small"
+    },
+    "money.stackexchange.com": {
+      "site_name": "money.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "money.stackexchange.com.7z",
+          "size_bytes": 132623554,
+          "format": "7z",
+          "md5": "fa8c1b40b282d9e022785b361284f394",
+          "mtime": 1712443337.0
+        }
+      },
+      "total_size_bytes": 132623554,
+      "file_count": 1,
+      "last_modified": 1712443337.0,
+      "total_size_mb": 126.48,
+      "size_category": "medium"
+    },
+    "movies.stackexchange.com": {
+      "site_name": "movies.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "movies.stackexchange.com.7z",
+          "size_bytes": 85008557,
+          "format": "7z",
+          "md5": "2897dd935d252ad9544f427a8a6b1fd0",
+          "mtime": 1712445181.0
+        }
+      },
+      "total_size_bytes": 85008557,
+      "file_count": 1,
+      "last_modified": 1712445181.0,
+      "total_size_mb": 81.07,
+      "size_category": "medium"
+    },
+    "music.stackexchange.com": {
+      "site_name": "music.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "music.stackexchange.com.7z",
+          "size_bytes": 106858896,
+          "format": "7z",
+          "md5": "25cb9304308f1aa97e4e42d8cd20fcc0",
+          "mtime": 1712440756.0
+        }
+      },
+      "total_size_bytes": 106858896,
+      "file_count": 1,
+      "last_modified": 1712440756.0,
+      "total_size_mb": 101.91,
+      "size_category": "medium"
+    },
+    "musicfans.stackexchange.com": {
+      "site_name": "musicfans.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "musicfans.stackexchange.com.7z",
+          "size_bytes": 6695912,
+          "format": "7z",
+          "md5": "f88f33fe0c7e5503f24f99ec24c0151c",
+          "mtime": 1712443526.0
+        }
+      },
+      "total_size_bytes": 6695912,
+      "file_count": 1,
+      "last_modified": 1712443526.0,
+      "total_size_mb": 6.39,
+      "size_category": "small"
+    },
+    "mythology.stackexchange.com": {
+      "site_name": "mythology.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "mythology.stackexchange.com.7z",
+          "size_bytes": 8962510,
+          "format": "7z",
+          "md5": "3a46af096852b39d2572c144c8e482c0",
+          "mtime": 1712441042.0
+        }
+      },
+      "total_size_bytes": 8962510,
+      "file_count": 1,
+      "last_modified": 1712441042.0,
+      "total_size_mb": 8.55,
+      "size_category": "small"
+    },
+    "networkengineering.stackexchange.com": {
+      "site_name": "networkengineering.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "networkengineering.stackexchange.com.7z",
+          "size_bytes": 49696339,
+          "format": "7z",
+          "md5": "27d3c3575c606943682ea001dbd17c1b",
+          "mtime": 1712442769.0
+        }
+      },
+      "total_size_bytes": 49696339,
+      "file_count": 1,
+      "last_modified": 1712442769.0,
+      "total_size_mb": 47.39,
+      "size_category": "small"
+    },
+    "opendata.stackexchange.com": {
+      "site_name": "opendata.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "opendata.stackexchange.com.7z",
+          "size_bytes": 13198948,
+          "format": "7z",
+          "md5": "64e2f0bffa556eb20ef2aa3a3ebc09b6",
+          "mtime": 1712448201.0
+        }
+      },
+      "total_size_bytes": 13198948,
+      "file_count": 1,
+      "last_modified": 1712448201.0,
+      "total_size_mb": 12.59,
+      "size_category": "small"
+    },
+    "opensource.stackexchange.com": {
+      "site_name": "opensource.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "opensource.stackexchange.com.7z",
+          "size_bytes": 17706206,
+          "format": "7z",
+          "md5": "3a5ecd782e0fe0f104a5fec362531337",
+          "mtime": 1712441743.0
+        }
+      },
+      "total_size_bytes": 17706206,
+      "file_count": 1,
+      "last_modified": 1712441743.0,
+      "total_size_mb": 16.89,
+      "size_category": "small"
+    },
+    "or.stackexchange.com": {
+      "site_name": "or.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "or.stackexchange.com.7z",
+          "size_bytes": 12765266,
+          "format": "7z",
+          "md5": "243fc955ae7c31248a15c6b56b7aa0db",
+          "mtime": 1712441052.0
+        }
+      },
+      "total_size_bytes": 12765266,
+      "file_count": 1,
+      "last_modified": 1712441052.0,
+      "total_size_mb": 12.17,
+      "size_category": "small"
+    },
+    "outdoors.stackexchange.com": {
+      "site_name": "outdoors.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "outdoors.stackexchange.com.7z",
+          "size_bytes": 31445654,
+          "format": "7z",
+          "md5": "3875f1ab98ffe32d4aa66bee2225699f",
+          "mtime": 1712447818.0
+        }
+      },
+      "total_size_bytes": 31445654,
+      "file_count": 1,
+      "last_modified": 1712447818.0,
+      "total_size_mb": 29.99,
+      "size_category": "small"
+    },
+    "parenting.stackexchange.com": {
+      "site_name": "parenting.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "parenting.stackexchange.com.7z",
+          "size_bytes": 45517811,
+          "format": "7z",
+          "md5": "5dc136fbeaa4cb0bb58204f3d840c7ae",
+          "mtime": 1712447114.0
+        }
+      },
+      "total_size_bytes": 45517811,
+      "file_count": 1,
+      "last_modified": 1712447114.0,
+      "total_size_mb": 43.41,
+      "size_category": "small"
+    },
+    "patents.stackexchange.com": {
+      "site_name": "patents.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "patents.stackexchange.com.7z",
+          "size_bytes": 12999389,
+          "format": "7z",
+          "md5": "1967668b7449934ac949d50195238aaf",
+          "mtime": 1712448093.0
+        }
+      },
+      "total_size_bytes": 12999389,
+      "file_count": 1,
+      "last_modified": 1712448093.0,
+      "total_size_mb": 12.4,
+      "size_category": "small"
+    },
+    "pets.stackexchange.com": {
+      "site_name": "pets.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "pets.stackexchange.com.7z",
+          "size_bytes": 27410072,
+          "format": "7z",
+          "md5": "d403320d7796d687a704bec3a1411a6c",
+          "mtime": 1712447974.0
+        }
+      },
+      "total_size_bytes": 27410072,
+      "file_count": 1,
+      "last_modified": 1712447974.0,
+      "total_size_mb": 26.14,
+      "size_category": "small"
+    },
+    "philosophy.stackexchange.com": {
+      "site_name": "philosophy.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "philosophy.stackexchange.com.7z",
+          "size_bytes": 127411126,
+          "format": "7z",
+          "md5": "38c5174f14ae57eac4a444f5dfbcd4ef",
+          "mtime": 1712445174.0
+        }
+      },
+      "total_size_bytes": 127411126,
+      "file_count": 1,
+      "last_modified": 1712445174.0,
+      "total_size_mb": 121.51,
+      "size_category": "medium"
+    },
+    "photo.stackexchange.com": {
+      "site_name": "photo.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "photo.stackexchange.com.7z",
+          "size_bytes": 114262856,
+          "format": "7z",
+          "md5": "c2875c188a433ea00f58a10bc29f846b",
+          "mtime": 1712442460.0
+        }
+      },
+      "total_size_bytes": 114262856,
+      "file_count": 1,
+      "last_modified": 1712442460.0,
+      "total_size_mb": 108.97,
+      "size_category": "medium"
+    },
+    "physics.stackexchange.com": {
+      "site_name": "physics.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "physics.stackexchange.com.7z",
+          "size_bytes": 729272818,
+          "format": "7z",
+          "md5": "1702af6446186443ff5a54ce692f0c18",
+          "mtime": 1712441968.0
+        }
+      },
+      "total_size_bytes": 729272818,
+      "file_count": 1,
+      "last_modified": 1712441968.0,
+      "total_size_mb": 695.49,
+      "size_category": "large"
+    },
+    "pm.stackexchange.com": {
+      "site_name": "pm.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "pm.stackexchange.com.7z",
+          "size_bytes": 31330694,
+          "format": "7z",
+          "md5": "5a99ee4f9009a09f064d20006797ff88",
+          "mtime": 1712447267.0
+        }
+      },
+      "total_size_bytes": 31330694,
+      "file_count": 1,
+      "last_modified": 1712447267.0,
+      "total_size_mb": 29.88,
+      "size_category": "small"
+    },
+    "poker.stackexchange.com": {
+      "site_name": "poker.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "poker.stackexchange.com.7z",
+          "size_bytes": 7529233,
+          "format": "7z",
+          "md5": "9f93ce1d254705ecfbd37d829d267085",
+          "mtime": 1712448944.0
+        }
+      },
+      "total_size_bytes": 7529233,
+      "file_count": 1,
+      "last_modified": 1712448944.0,
+      "total_size_mb": 7.18,
+      "size_category": "small"
+    },
+    "politics.stackexchange.com": {
+      "site_name": "politics.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "politics.stackexchange.com.7z",
+          "size_bytes": 114772878,
+          "format": "7z",
+          "md5": "8aef721f983603866b8024888b5bc3c1",
+          "mtime": 1712445281.0
+        }
+      },
+      "total_size_bytes": 114772878,
+      "file_count": 1,
+      "last_modified": 1712445281.0,
+      "total_size_mb": 109.46,
+      "size_category": "medium"
+    },
+    "portuguese.stackexchange.com": {
+      "site_name": "portuguese.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "portuguese.stackexchange.com.7z",
+          "size_bytes": 10552483,
+          "format": "7z",
+          "md5": "79f3304e9e71df8fbef2a5ca3aa67a62",
+          "mtime": 1712440827.0
+        }
+      },
+      "total_size_bytes": 10552483,
+      "file_count": 1,
+      "last_modified": 1712440827.0,
+      "total_size_mb": 10.06,
+      "size_category": "small"
+    },
+    "proofassistants.stackexchange.com": {
+      "site_name": "proofassistants.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "proofassistants.stackexchange.com.7z",
+          "size_bytes": 3808340,
+          "format": "7z",
+          "md5": "6683d64482483ef5399fb789fbfd660f",
+          "mtime": 1712439053.0
+        }
+      },
+      "total_size_bytes": 3808340,
+      "file_count": 1,
+      "last_modified": 1712439053.0,
+      "total_size_mb": 3.63,
+      "size_category": "small"
+    },
+    "puzzling.stackexchange.com": {
+      "site_name": "puzzling.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "puzzling.stackexchange.com.7z",
+          "size_bytes": 116139507,
+          "format": "7z",
+          "md5": "ea87feb2454748a4d7de425f0991e2ed",
+          "mtime": 1712442753.0
+        }
+      },
+      "total_size_bytes": 116139507,
+      "file_count": 1,
+      "last_modified": 1712442753.0,
+      "total_size_mb": 110.76,
+      "size_category": "medium"
+    },
+    "quant.stackexchange.com": {
+      "site_name": "quant.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "quant.stackexchange.com.7z",
+          "size_bytes": 55473504,
+          "format": "7z",
+          "md5": "bc8343e7a3113b13045baf022f824898",
+          "mtime": 1712447018.0
+        }
+      },
+      "total_size_bytes": 55473504,
+      "file_count": 1,
+      "last_modified": 1712447018.0,
+      "total_size_mb": 52.9,
+      "size_category": "medium"
+    },
+    "quantumcomputing.stackexchange.com": {
+      "site_name": "quantumcomputing.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "quantumcomputing.stackexchange.com.7z",
+          "size_bytes": 30143745,
+          "format": "7z",
+          "md5": "f7565b69877316c69368022471d30390",
+          "mtime": 1712443865.0
+        }
+      },
+      "total_size_bytes": 30143745,
+      "file_count": 1,
+      "last_modified": 1712443865.0,
+      "total_size_mb": 28.75,
+      "size_category": "small"
+    },
+    "raspberrypi.stackexchange.com": {
+      "site_name": "raspberrypi.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "raspberrypi.stackexchange.com.7z",
+          "size_bytes": 104465642,
+          "format": "7z",
+          "md5": "41d21a2841c0cbad0a8d74eb0e8469f5",
+          "mtime": 1712442266.0
+        }
+      },
+      "total_size_bytes": 104465642,
+      "file_count": 1,
+      "last_modified": 1712442266.0,
+      "total_size_mb": 99.63,
+      "size_category": "medium"
+    },
+    "retrocomputing.stackexchange.com": {
+      "site_name": "retrocomputing.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "retrocomputing.stackexchange.com.7z",
+          "size_bytes": 41398247,
+          "format": "7z",
+          "md5": "dcce7647afca47011ca5207b36092547",
+          "mtime": 1712442020.0
+        }
+      },
+      "total_size_bytes": 41398247,
+      "file_count": 1,
+      "last_modified": 1712442020.0,
+      "total_size_mb": 39.48,
+      "size_category": "small"
+    },
+    "reverseengineering.stackexchange.com": {
+      "site_name": "reverseengineering.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "reverseengineering.stackexchange.com.7z",
+          "size_bytes": 28550960,
+          "format": "7z",
+          "md5": "4874cc1c4987a98630178c0bb0e95c39",
+          "mtime": 1712447816.0
+        }
+      },
+      "total_size_bytes": 28550960,
+      "file_count": 1,
+      "last_modified": 1712447816.0,
+      "total_size_mb": 27.23,
+      "size_category": "small"
+    },
+    "robotics.stackexchange.com": {
+      "site_name": "robotics.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "robotics.stackexchange.com.7z",
+          "size_bytes": 97682297,
+          "format": "7z",
+          "md5": "66c740f80ad985b78c41f4dfc2fee646",
+          "mtime": 1712441270.0
+        }
+      },
+      "total_size_bytes": 97682297,
+      "file_count": 1,
+      "last_modified": 1712441270.0,
+      "total_size_mb": 93.16,
+      "size_category": "medium"
+    },
+    "rpg.stackexchange.com": {
+      "site_name": "rpg.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "rpg.stackexchange.com.7z",
+          "size_bytes": 282421419,
+          "format": "7z",
+          "md5": "c2c61ed5f20705d661e5650ff8f58c4f",
+          "mtime": 1712444782.0
+        }
+      },
+      "total_size_bytes": 282421419,
+      "file_count": 1,
+      "last_modified": 1712444782.0,
+      "total_size_mb": 269.34,
+      "size_category": "medium"
+    },
+    "rus.stackexchange.com": {
+      "site_name": "rus.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "rus.stackexchange.com.7z",
+          "size_bytes": 61248692,
+          "format": "7z",
+          "md5": "c7e554fab252b362151fc474272426af",
+          "mtime": 1712466593.0
+        }
+      },
+      "total_size_bytes": 61248692,
+      "file_count": 1,
+      "last_modified": 1712466593.0,
+      "total_size_mb": 58.41,
+      "size_category": "medium"
+    },
+    "russian.stackexchange.com": {
+      "site_name": "russian.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "russian.stackexchange.com.7z",
+          "size_bytes": 18025471,
+          "format": "7z",
+          "md5": "ebb4102815e028aca26e45174113a900",
+          "mtime": 1712442593.0
+        }
+      },
+      "total_size_bytes": 18025471,
+      "file_count": 1,
+      "last_modified": 1712442593.0,
+      "total_size_mb": 17.19,
+      "size_category": "small"
+    },
+    "salesforce.stackexchange.com": {
+      "site_name": "salesforce.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "salesforce.stackexchange.com.7z",
+          "size_bytes": 277209669,
+          "format": "7z",
+          "md5": "1aa0a6be2c11166896c8cace38e7011f",
+          "mtime": 1712440318.0
+        }
+      },
+      "total_size_bytes": 277209669,
+      "file_count": 1,
+      "last_modified": 1712440318.0,
+      "total_size_mb": 264.37,
+      "size_category": "medium"
+    },
+    "scicomp.stackexchange.com": {
+      "site_name": "scicomp.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "scicomp.stackexchange.com.7z",
+          "size_bytes": 37462189,
+          "format": "7z",
+          "md5": "f763d9bccf18dfa13f392630e8b5334f",
+          "mtime": 1712447276.0
+        }
+      },
+      "total_size_bytes": 37462189,
+      "file_count": 1,
+      "last_modified": 1712447276.0,
+      "total_size_mb": 35.73,
+      "size_category": "small"
+    },
+    "scifi.stackexchange.com": {
+      "site_name": "scifi.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "scifi.stackexchange.com.7z",
+          "size_bytes": 338096971,
+          "format": "7z",
+          "md5": "0e0cf9497890b44bd70d5bcdd08d8aa3",
+          "mtime": 1712441029.0
+        }
+      },
+      "total_size_bytes": 338096971,
+      "file_count": 1,
+      "last_modified": 1712441029.0,
+      "total_size_mb": 322.43,
+      "size_category": "medium"
+    },
+    "security.stackexchange.com": {
+      "site_name": "security.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "security.stackexchange.com.7z",
+          "size_bytes": 260037012,
+          "format": "7z",
+          "md5": "cc6de9272d9a9edcecdbbfd4f85a8b9e",
+          "mtime": 1712442778.0
+        }
+      },
+      "total_size_bytes": 260037012,
+      "file_count": 1,
+      "last_modified": 1712442778.0,
+      "total_size_mb": 247.99,
+      "size_category": "medium"
+    },
+    "serverfault.com": {
+      "site_name": "serverfault.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "serverfault.com.7z",
+          "size_bytes": 859606467,
+          "format": "7z",
+          "md5": "1b075d4c7ae7396da965874f156e0fdf",
+          "mtime": 1712440574.0
+        }
+      },
+      "total_size_bytes": 859606467,
+      "file_count": 1,
+      "last_modified": 1712440574.0,
+      "total_size_mb": 819.78,
+      "size_category": "large"
+    },
+    "sharepoint.stackexchange.com": {
+      "site_name": "sharepoint.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "sharepoint.stackexchange.com.7z",
+          "size_bytes": 182355835,
+          "format": "7z",
+          "md5": "d7bb7c80653f78b62a21bdd2bbaf01f2",
+          "mtime": 1712444281.0
+        }
+      },
+      "total_size_bytes": 182355835,
+      "file_count": 1,
+      "last_modified": 1712444281.0,
+      "total_size_mb": 173.91,
+      "size_category": "medium"
+    },
+    "sitecore.stackexchange.com": {
+      "site_name": "sitecore.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "sitecore.stackexchange.com.7z",
+          "size_bytes": 29719800,
+          "format": "7z",
+          "md5": "087c10ffffb90e69d790743ca2e6aaf2",
+          "mtime": 1712442027.0
+        }
+      },
+      "total_size_bytes": 29719800,
+      "file_count": 1,
+      "last_modified": 1712442027.0,
+      "total_size_mb": 28.34,
+      "size_category": "small"
+    },
+    "skeptics.stackexchange.com": {
+      "site_name": "skeptics.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "skeptics.stackexchange.com.7z",
+          "size_bytes": 76079966,
+          "format": "7z",
+          "md5": "e483bdd938149db46b70431ee98b5df6",
+          "mtime": 1712446141.0
+        }
+      },
+      "total_size_bytes": 76079966,
+      "file_count": 1,
+      "last_modified": 1712446141.0,
+      "total_size_mb": 72.56,
+      "size_category": "medium"
+    },
+    "softwareengineering.stackexchange.com": {
+      "site_name": "softwareengineering.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "softwareengineering.stackexchange.com.7z",
+          "size_bytes": 363040159,
+          "format": "7z",
+          "md5": "1a41de0635cb1d6bfceb7536f0f97f00",
+          "mtime": 1712443332.0
+        }
+      },
+      "total_size_bytes": 363040159,
+      "file_count": 1,
+      "last_modified": 1712443332.0,
+      "total_size_mb": 346.22,
+      "size_category": "medium"
+    },
+    "softwarerecs.stackexchange.com": {
+      "site_name": "softwarerecs.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "softwarerecs.stackexchange.com.7z",
+          "size_bytes": 52664606,
+          "format": "7z",
+          "md5": "b1efd82e0c00bf5dded5799cddeee497",
+          "mtime": 1712446172.0
+        }
+      },
+      "total_size_bytes": 52664606,
+      "file_count": 1,
+      "last_modified": 1712446172.0,
+      "total_size_mb": 50.22,
+      "size_category": "medium"
+    },
+    "solana.stackexchange.com": {
+      "site_name": "solana.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "solana.stackexchange.com.7z",
+          "size_bytes": 7829353,
+          "format": "7z",
+          "md5": "d460fa45c2ac9661a55310057841a8de",
+          "mtime": 1712440932.0
+        }
+      },
+      "total_size_bytes": 7829353,
+      "file_count": 1,
+      "last_modified": 1712440932.0,
+      "total_size_mb": 7.47,
+      "size_category": "small"
+    },
+    "sound.stackexchange.com": {
+      "site_name": "sound.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "sound.stackexchange.com.7z",
+          "size_bytes": 29312204,
+          "format": "7z",
+          "md5": "5f6435c8f5be3ef23ce7e4361c64f326",
+          "mtime": 1712447147.0
+        }
+      },
+      "total_size_bytes": 29312204,
+      "file_count": 1,
+      "last_modified": 1712447147.0,
+      "total_size_mb": 27.95,
+      "size_category": "small"
+    },
+    "space.stackexchange.com": {
+      "site_name": "space.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "space.stackexchange.com.7z",
+          "size_bytes": 79762283,
+          "format": "7z",
+          "md5": "4f8192ed1120bf4b607b0de431a6beb7",
+          "mtime": 1712446621.0
+        }
+      },
+      "total_size_bytes": 79762283,
+      "file_count": 1,
+      "last_modified": 1712446621.0,
+      "total_size_mb": 76.07,
+      "size_category": "medium"
+    },
+    "spanish.stackexchange.com": {
+      "site_name": "spanish.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "spanish.stackexchange.com.7z",
+          "size_bytes": 35127606,
+          "format": "7z",
+          "md5": "45816b96af474110772df8030ac28a04",
+          "mtime": 1712447636.0
+        }
+      },
+      "total_size_bytes": 35127606,
+      "file_count": 1,
+      "last_modified": 1712447636.0,
+      "total_size_mb": 33.5,
+      "size_category": "small"
+    },
+    "sports.stackexchange.com": {
+      "site_name": "sports.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "sports.stackexchange.com.7z",
+          "size_bytes": 17250955,
+          "format": "7z",
+          "md5": "33b7611f4fd5dd250bacee3eee9c6064",
+          "mtime": 1712447293.0
+        }
+      },
+      "total_size_bytes": 17250955,
+      "file_count": 1,
+      "last_modified": 1712447293.0,
+      "total_size_mb": 16.45,
+      "size_category": "small"
+    },
+    "sqa.stackexchange.com": {
+      "site_name": "sqa.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "sqa.stackexchange.com.7z",
+          "size_bytes": 39356564,
+          "format": "7z",
+          "md5": "c09de7135e66eda85a4e4dd9a7c6d329",
+          "mtime": 1712446848.0
+        }
+      },
+      "total_size_bytes": 39356564,
+      "file_count": 1,
+      "last_modified": 1712446848.0,
+      "total_size_mb": 37.53,
+      "size_category": "small"
+    },
+    "stackapps.com": {
+      "site_name": "stackapps.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "stackapps.com.7z",
+          "size_bytes": 14323153,
+          "format": "7z",
+          "md5": "257adae1e8457fc79168c5c7e2adb834",
+          "mtime": 1712442817.0
+        }
+      },
+      "total_size_bytes": 14323153,
+      "file_count": 1,
+      "last_modified": 1712442817.0,
+      "total_size_mb": 13.66,
+      "size_category": "small"
+    },
+    "stackoverflow.com": {
+      "site_name": "stackoverflow.com",
+      "tables": {
+        "Badges": {
+          "filename": "stackoverflow.com-Badges.7z",
+          "size_bytes": 539665707,
+          "format": "7z",
+          "md5": "97b7daa1575be56b547e072d42574c2b",
+          "mtime": 1712438923.0
+        },
+        "Comments": {
+          "filename": "stackoverflow.com-Comments.7z",
+          "size_bytes": 6997473057,
+          "format": "7z",
+          "md5": "0c909b38069db7608f652b365ff67f04",
+          "mtime": 1712449226.0
+        },
+        "PostHistory": {
+          "filename": "stackoverflow.com-PostHistory.7z",
+          "size_bytes": 37747369973,
+          "format": "7z",
+          "md5": "c2c89d3abec269488c9a926d3db55f7c",
+          "mtime": 1712518736.0
+        },
+        "PostLinks": {
+          "filename": "stackoverflow.com-PostLinks.7z",
+          "size_bytes": 151452449,
+          "format": "7z",
+          "md5": "300e6c8d90fd12abf2d2976f3085a44c",
+          "mtime": 1712438034.0
+        },
+        "Posts": {
+          "filename": "stackoverflow.com-Posts.7z",
+          "size_bytes": 23026928274,
+          "format": "7z",
+          "md5": "7fad535401201f725067170ee3b7bb87",
+          "mtime": 1712487962.0
+        },
+        "Tags": {
+          "filename": "stackoverflow.com-Tags.7z",
+          "size_bytes": 1117182,
+          "format": "7z",
+          "md5": "5afd09de7b3b5dd53cb733d12e60c570",
+          "mtime": 1712437883.0
+        },
+        "Users": {
+          "filename": "stackoverflow.com-Users.7z",
+          "size_bytes": 990180949,
+          "format": "7z",
+          "md5": "11d6ff9a8f92ab10e179ea313ddbadab",
+          "mtime": 1712439616.0
+        },
+        "Votes": {
+          "filename": "stackoverflow.com-Votes.7z",
+          "size_bytes": 2202885100,
+          "format": "7z",
+          "md5": "5393939fab7c87b54b91c3195146a699",
+          "mtime": 1712435767.0
+        }
+      },
+      "total_size_bytes": 71657072691,
+      "file_count": 8,
+      "last_modified": 1712518736.0,
+      "total_size_mb": 68337.51,
+      "size_category": "large"
+    },
+    "stats.stackexchange.com": {
+      "site_name": "stats.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "stats.stackexchange.com.7z",
+          "size_bytes": 596572001,
+          "format": "7z",
+          "md5": "e26deb6c79dedb7b62e866e396b9ab02",
+          "mtime": 1712447332.0
+        }
+      },
+      "total_size_bytes": 596572001,
+      "file_count": 1,
+      "last_modified": 1712447332.0,
+      "total_size_mb": 568.94,
+      "size_category": "large"
+    },
+    "stellar.stackexchange.com": {
+      "site_name": "stellar.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "stellar.stackexchange.com.7z",
+          "size_bytes": 3024595,
+          "format": "7z",
+          "md5": "496dd9043059b35ab7d73857954c05bf",
+          "mtime": 1712439777.0
+        }
+      },
+      "total_size_bytes": 3024595,
+      "file_count": 1,
+      "last_modified": 1712439777.0,
+      "total_size_mb": 2.88,
+      "size_category": "small"
+    },
+    "substrate.stackexchange.com": {
+      "site_name": "substrate.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "substrate.stackexchange.com.7z",
+          "size_bytes": 8949719,
+          "format": "7z",
+          "md5": "90fc22eab37cc2fc91e14344956dc9d5",
+          "mtime": 1712440990.0
+        }
+      },
+      "total_size_bytes": 8949719,
+      "file_count": 1,
+      "last_modified": 1712440990.0,
+      "total_size_mb": 8.54,
+      "size_category": "small"
+    },
+    "superuser.com": {
+      "site_name": "superuser.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "superuser.com.7z",
+          "size_bytes": 1294499667,
+          "format": "7z",
+          "md5": "37179ccf3098d75f272419388f2db657",
+          "mtime": 1712449718.0
+        }
+      },
+      "total_size_bytes": 1294499667,
+      "file_count": 1,
+      "last_modified": 1712449718.0,
+      "total_size_mb": 1234.53,
+      "size_category": "large"
+    },
+    "sustainability.stackexchange.com": {
+      "site_name": "sustainability.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "sustainability.stackexchange.com.7z",
+          "size_bytes": 9906380,
+          "format": "7z",
+          "md5": "41056cdd0979ebb0868b466270f55e3c",
+          "mtime": 1712448834.0
+        }
+      },
+      "total_size_bytes": 9906380,
+      "file_count": 1,
+      "last_modified": 1712448834.0,
+      "total_size_mb": 9.45,
+      "size_category": "small"
+    },
+    "tex.stackexchange.com": {
+      "site_name": "tex.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "tex.stackexchange.com.7z",
+          "size_bytes": 777802350,
+          "format": "7z",
+          "md5": "cb8345bb543c818ea110442847c6cf42",
+          "mtime": 1712445389.0
+        }
+      },
+      "total_size_bytes": 777802350,
+      "file_count": 1,
+      "last_modified": 1712445389.0,
+      "total_size_mb": 741.77,
+      "size_category": "large"
+    },
+    "tezos.stackexchange.com": {
+      "site_name": "tezos.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "tezos.stackexchange.com.7z",
+          "size_bytes": 4041624,
+          "format": "7z",
+          "md5": "b6550168b6beb7629ff33944c36baca6",
+          "mtime": 1712443446.0
+        }
+      },
+      "total_size_bytes": 4041624,
+      "file_count": 1,
+      "last_modified": 1712443446.0,
+      "total_size_mb": 3.85,
+      "size_category": "small"
+    },
+    "tor.stackexchange.com": {
+      "site_name": "tor.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "tor.stackexchange.com.7z",
+          "size_bytes": 12692336,
+          "format": "7z",
+          "md5": "cc7668dcb109b7b6aab94b41300c604d",
+          "mtime": 1712448090.0
+        }
+      },
+      "total_size_bytes": 12692336,
+      "file_count": 1,
+      "last_modified": 1712448090.0,
+      "total_size_mb": 12.1,
+      "size_category": "small"
+    },
+    "travel.stackexchange.com": {
+      "site_name": "travel.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "travel.stackexchange.com.7z",
+          "size_bytes": 156149761,
+          "format": "7z",
+          "md5": "c11842bcc4c533ffb3baa87d07fd142a",
+          "mtime": 1712443852.0
+        }
+      },
+      "total_size_bytes": 156149761,
+      "file_count": 1,
+      "last_modified": 1712443852.0,
+      "total_size_mb": 148.92,
+      "size_category": "medium"
+    },
+    "tridion.stackexchange.com": {
+      "site_name": "tridion.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "tridion.stackexchange.com.7z",
+          "size_bytes": 17169543,
+          "format": "7z",
+          "md5": "7cb88791f25955ae6b55c3f02f92e9c3",
+          "mtime": 1712447552.0
+        }
+      },
+      "total_size_bytes": 17169543,
+      "file_count": 1,
+      "last_modified": 1712447552.0,
+      "total_size_mb": 16.37,
+      "size_category": "small"
+    },
+    "ukrainian.stackexchange.com": {
+      "site_name": "ukrainian.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "ukrainian.stackexchange.com.7z",
+          "size_bytes": 9460742,
+          "format": "7z",
+          "md5": "9919bcfc7cf0625d3741275fc833b78a",
+          "mtime": 1712440646.0
+        }
+      },
+      "total_size_bytes": 9460742,
+      "file_count": 1,
+      "last_modified": 1712440646.0,
+      "total_size_mb": 9.02,
+      "size_category": "small"
+    },
+    "unix.stackexchange.com": {
+      "site_name": "unix.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "unix.stackexchange.com.7z",
+          "size_bytes": 705946631,
+          "format": "7z",
+          "md5": "9cef579fc377c77fb1c276613a1d868f",
+          "mtime": 1712440269.0
+        }
+      },
+      "total_size_bytes": 705946631,
+      "file_count": 1,
+      "last_modified": 1712440269.0,
+      "total_size_mb": 673.24,
+      "size_category": "large"
+    },
+    "ux.stackexchange.com": {
+      "site_name": "ux.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "ux.stackexchange.com.7z",
+          "size_bytes": 127002751,
+          "format": "7z",
+          "md5": "a8a8f4d2aba6c535f869bfeeecc90178",
+          "mtime": 1712444614.0
+        }
+      },
+      "total_size_bytes": 127002751,
+      "file_count": 1,
+      "last_modified": 1712444614.0,
+      "total_size_mb": 121.12,
+      "size_category": "medium"
+    },
+    "vegetarianism.stackexchange.com": {
+      "site_name": "vegetarianism.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "vegetarianism.stackexchange.com.7z",
+          "size_bytes": 3241822,
+          "format": "7z",
+          "md5": "141dd19b505d3b7a9f963aa47c87cf10",
+          "mtime": 1712440082.0
+        }
+      },
+      "total_size_bytes": 3241822,
+      "file_count": 1,
+      "last_modified": 1712440082.0,
+      "total_size_mb": 3.09,
+      "size_category": "small"
+    },
+    "vi.stackexchange.com": {
+      "site_name": "vi.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "vi.stackexchange.com.7z",
+          "size_bytes": 36803953,
+          "format": "7z",
+          "md5": "d3a822be5e2a55a3b08d39bd563541ae",
+          "mtime": 1712442155.0
+        }
+      },
+      "total_size_bytes": 36803953,
+      "file_count": 1,
+      "last_modified": 1712442155.0,
+      "total_size_mb": 35.1,
+      "size_category": "small"
+    },
+    "webapps.stackexchange.com": {
+      "site_name": "webapps.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "webapps.stackexchange.com.7z",
+          "size_bytes": 82572178,
+          "format": "7z",
+          "md5": "11f7469746055b5bb334e10ff18522bd",
+          "mtime": 1712467680.0
+        }
+      },
+      "total_size_bytes": 82572178,
+      "file_count": 1,
+      "last_modified": 1712467680.0,
+      "total_size_mb": 78.75,
+      "size_category": "medium"
+    },
+    "webmasters.stackexchange.com": {
+      "site_name": "webmasters.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "webmasters.stackexchange.com.7z",
+          "size_bytes": 97066531,
+          "format": "7z",
+          "md5": "4e39d5494ec0b24de59134858fe5ae84",
+          "mtime": 1712442914.0
+        }
+      },
+      "total_size_bytes": 97066531,
+      "file_count": 1,
+      "last_modified": 1712442914.0,
+      "total_size_mb": 92.57,
+      "size_category": "medium"
+    },
+    "windowsphone.stackexchange.com": {
+      "site_name": "windowsphone.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "windowsphone.stackexchange.com.7z",
+          "size_bytes": 6563180,
+          "format": "7z",
+          "md5": "640241fb4ffb89846c4a4050520209c1",
+          "mtime": 1712446985.0
+        }
+      },
+      "total_size_bytes": 6563180,
+      "file_count": 1,
+      "last_modified": 1712446985.0,
+      "total_size_mb": 6.26,
+      "size_category": "small"
+    },
+    "woodworking.stackexchange.com": {
+      "site_name": "woodworking.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "woodworking.stackexchange.com.7z",
+          "size_bytes": 15364781,
+          "format": "7z",
+          "md5": "b48272bc0797caed695f3edba9007b65",
+          "mtime": 1712465534.0
+        }
+      },
+      "total_size_bytes": 15364781,
+      "file_count": 1,
+      "last_modified": 1712465534.0,
+      "total_size_mb": 14.65,
+      "size_category": "small"
+    },
+    "wordpress.stackexchange.com": {
+      "site_name": "wordpress.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "wordpress.stackexchange.com.7z",
+          "size_bytes": 262755004,
+          "format": "7z",
+          "md5": "62a3bbc389e456c6b97a4fbe0686869e",
+          "mtime": 1712444299.0
+        }
+      },
+      "total_size_bytes": 262755004,
+      "file_count": 1,
+      "last_modified": 1712444299.0,
+      "total_size_mb": 250.58,
+      "size_category": "medium"
+    },
+    "workplace.stackexchange.com": {
+      "site_name": "workplace.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "workplace.stackexchange.com.7z",
+          "size_bytes": 201016499,
+          "format": "7z",
+          "md5": "c1798597293557e2543ecdb93512def0",
+          "mtime": 1712444892.0
+        }
+      },
+      "total_size_bytes": 201016499,
+      "file_count": 1,
+      "last_modified": 1712444892.0,
+      "total_size_mb": 191.7,
+      "size_category": "medium"
+    },
+    "worldbuilding.stackexchange.com": {
+      "site_name": "worldbuilding.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "worldbuilding.stackexchange.com.7z",
+          "size_bytes": 365949621,
+          "format": "7z",
+          "md5": "8066a9ea2c99a3ad528f9b88c6f9ab87",
+          "mtime": 1712443904.0
+        }
+      },
+      "total_size_bytes": 365949621,
+      "file_count": 1,
+      "last_modified": 1712443904.0,
+      "total_size_mb": 349.0,
+      "size_category": "medium"
+    },
+    "writers.stackexchange.com": {
+      "site_name": "writers.stackexchange.com",
+      "tables": {
+        "complete_archive": {
+          "filename": "writers.stackexchange.com.7z",
+          "size_bytes": 70423276,
+          "format": "7z",
+          "md5": "fce9f1da6ceda8cc8fbf5558d340bfc8",
+          "mtime": 1712446394.0
+        }
+      },
+      "total_size_bytes": 70423276,
+      "file_count": 1,
+      "last_modified": 1712446394.0,
+      "total_size_mb": 67.16,
+      "size_category": "medium"
+    }
+  },
+  "summary": {
+    "total_size_gb": 88.98,
+    "size_distribution": {
+      "small": 99,
+      "medium": 69,
+      "large": 10
+    }
+  }
+}

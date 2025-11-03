@@ -27,11 +27,23 @@ wheels/
 .ipynb_checkpoints
 *.ipynb_checkpoints/
 
-# Data files (too large for git)
+# Raw data (temporary downloads)
 data/raw/*
-data/processed/*
 !data/raw/.gitkeep
-!data/processed/.gitkeep
+
+# Parsed data (large pickles)
+data/processed/parsed/
+
+# Graphs (PyG format)
+data/processed/graphs/
+
+# Large file formats
+*.7z
+*.xml
+*.pkl
+*.pkl.gz
+*.pt
+*.pth
 
 # Model checkpoints
 *.pth
@@ -57,6 +69,13 @@ Thumbs.db
 
 # Environment
 .env
+
+# Config with sensitive info
+config.local.yaml
+
+# Logs
+*.log
+logs/
 
 # Claude Code local settings
 .claude/settings.local.json
