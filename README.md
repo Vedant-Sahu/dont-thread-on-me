@@ -28,3 +28,34 @@ pip install -r requirements.txt
 - `experiments/`: Training scripts and configs
 - `results/`: Model outputs and visualizations
 - `docs/`: Project documentation
+
+## Usage
+
+### Building Graphs
+
+Build PyG graphs from parsed Stack Exchange data:
+
+```bash
+# Build graphs for all sites
+python src/data_processing/build_graphs.py --data_dir /path/to/parsed --output_dir /path/to/graphs
+
+# Build graphs for specific sites
+python src/data_processing/build_graphs.py --data_dir /path/to/parsed --output_dir /path/to/graphs --sites arduino.stackexchange.com astronomy.stackexchange.com
+
+# Force rebuild (don't skip existing graphs)
+python src/data_processing/build_graphs.py --data_dir /path/to/parsed --output_dir /path/to/graphs --no-skip-existing
+```
+
+### Verifying Graphs
+
+Verify that graph objects were created correctly:
+
+```bash
+# Verify graphs for specific sites
+python src/data_processing/verify_graph.py --graphs_dir /path/to/graphs --sites arduino.stackexchange.com astronomy.stackexchange.com
+
+# Verify all months for a site
+python src/data_processing/verify_graph.py --graphs_dir /path/to/graphs --sites arduino.stackexchange.com --all-months
+```
+
+**Note:** Replace `/path/to/parsed` and `/path/to/graphs` with your local data directories. Each team member should use their own paths via CLI arguments.
