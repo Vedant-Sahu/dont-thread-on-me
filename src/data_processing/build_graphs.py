@@ -32,12 +32,9 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 # defined in feature_extraction.py
 from src.data_processing.feature_extraction import (
+    build_tag_features,
     build_user_features,
-    compute_tag_answer_quality,
-    compute_tag_difficulty,
-    compute_tag_diversity,
-    compute_tag_growth_rate,
-    compute_tag_popularity,
+    compute_community_metrics,
 )
 
 
@@ -74,8 +71,8 @@ def create_hetero_graph_with_features(
 ) -> Optional[HeteroData]:
     """
     Create PyG HeteroData with:
-    - Level 1: tag-tag co-occurrence edges
-    - Level 2: user-tag bipartite edges
+    - tag-tag co-occurrence edges
+    - user-tag bipartite edges
     - Node features for both tags and users
     """
     data = HeteroData()
@@ -157,26 +154,31 @@ def create_hetero_graph_with_features(
         ut_weights.append(weight)
     
     if ut_edges:
-        data['user', 'contributes', 'tag'].edge_index = torch.tensor(ut_edges, dtype=torch.long).t()
-        data['user', 'contributes', 'tag'].edge_weight = torch.tensor(ut_weights, dtype=torch.float)
+        edge_index_tensor = torch.tensor(ut_edges, dtype=torch.long).t()
+        edge_weight_tensor = torch.tensor(ut_weights, dtype=torch.float)
+        
+        # Forward direction
+        data['user', 'contributes', 'tag'].edge_index = edge_index_tensor
+        data['user', 'contributes', 'tag'].edge_weight = edge_weight_tensor
+        
+        # Reverse direction (flip source/target)
+        data['tag', 'contributed_to_by', 'user'].edge_index = edge_index_tensor.flip(0)
+        data['tag', 'contributed_to_by', 'user'].edge_weight = edge_weight_tensor
     
     # ===== Build Tag Features =====
+    # Get all tag features in one pass
+    tag_features_dict = build_tag_features(posts, month, prev_month)
+    
+    # Extract features in sorted order
     tag_feature_matrix = []
     for tag in sorted(tag_set):
-        features = {
-            'popularity': compute_tag_popularity(posts, month, tag),
-            'answer_quality': compute_tag_answer_quality(posts, month, tag),
-            'difficulty': compute_tag_difficulty(posts, month, tag),
-            'diversity': compute_tag_diversity(posts, month, tag),
-            'growth_rate': compute_tag_growth_rate(posts, month, prev_month, tag) if prev_month else 0.0
-        }
-        
+        feats = tag_features_dict[tag]
         feature_vector = [
-            features['popularity'],
-            features['answer_quality'],
-            features['difficulty'],
-            features['diversity'],
-            features['growth_rate']
+            feats['popularity'],
+            feats['answer_quality'],
+            feats['difficulty'],
+            feats['diversity'],
+            feats['growth_rate']
         ]
         tag_feature_matrix.append(feature_vector)
     
@@ -198,6 +200,11 @@ def create_hetero_graph_with_features(
         user_feature_matrix.append(feature_vector)
     
     data['user'].x = torch.tensor(user_feature_matrix, dtype=torch.float)
+    
+    # ===== Compute and Store Community-level Target Metrics =====
+    community_metrics = compute_community_metrics(posts, users, month, prev_month)
+    if community_metrics:
+        data.y = community_metrics
     
     # Store metadata
     data['tag'].tag_to_idx = tag_to_idx
@@ -333,4 +340,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

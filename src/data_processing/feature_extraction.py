@@ -12,6 +12,7 @@ Usage:
 """
 
 import numpy as np
+from calendar import monthrange
 from collections import defaultdict
 from datetime import datetime
 from typing import Dict, Optional
@@ -124,7 +125,7 @@ def build_tag_features(posts: Dict, month: str, previous_month: Optional[str] = 
     return tag_features
 
 
-# ===== USER FEATURES =====
+# ===== USER FEATURES ===== 
 
 def compute_user_reputation(users: Dict, user_id: str) -> int:
     """Get user reputation from users dict."""
@@ -234,3 +235,132 @@ def build_user_features(posts: Dict, users: Dict, month: str, next_month: Option
     
     return user_features
 
+
+# ===== COMMUNITY METRICS (Graph-level targets) =====
+
+def compute_community_metrics(
+    posts: Dict,
+    users: Dict,
+    month: str,
+    prev_month: Optional[str] = None
+) -> Optional[Dict[str, float]]:
+    """
+    Compute community-level health metrics for a given month.
+    
+    These metrics serve as prediction targets when this month appears
+    6 months after a training sequence.
+    
+    Args:
+        posts: Dictionary of monthly post data
+        users: Dictionary of user data
+        month: Current month (YYYY-MM format)
+        prev_month: Previous month for computing growth rate
+    
+    Returns:
+        Dictionary with 4 metrics: qpd, answer_rate, retention, growth
+        Returns None if insufficient data
+    """
+    if month not in posts:
+        return None
+    
+    questions = posts[month]['questions']
+    answers = posts[month]['answers']
+    
+    if not questions:
+        return None
+    
+    # 1. Questions per day (QPD)
+    # Parse year and month from format 'YYYY-MM'
+    year, month_num = map(int, month.split('-'))
+    # Get exact number of days in the month
+    days_in_month = monthrange(year, month_num)[1]
+    qpd = len(questions) / days_in_month
+    
+    # 2. Answer rate (fraction of questions with accepted answers)
+    questions_with_accepted = sum(1 for q in questions if q.get('accepted_answer_id') is not None)
+    answer_rate = questions_with_accepted / len(questions) if questions else 0.0
+    
+    # 3. User retention (average retention rate of active users)
+    active_users_this_month = set()
+    for q in questions:
+        if q.get('user_id'):
+            active_users_this_month.add(q['user_id'])
+    for a in answers:
+        if a.get('user_id'):
+            active_users_this_month.add(a['user_id'])
+    
+    retention = 0.0
+    if active_users_this_month:
+        user_features = build_user_features(posts, users, month, None)
+        retention_values = [user_features[uid]['retention'] for uid in active_users_this_month 
+                           if uid in user_features]
+        retention = sum(retention_values) / len(retention_values) if retention_values else 0.0
+    
+    # 4. New user growth rate (percentage change in new user count)
+    all_months = sorted([m for m in posts.keys() if m and m != 'metadata' and m <= month])
+    
+    current_month_users = set()
+    for q in questions:
+        if q.get('user_id'):
+            current_month_users.add(q['user_id'])
+    for a in answers:
+        if a.get('user_id'):
+            current_month_users.add(a['user_id'])
+    
+    # Find new users (no activity in previous months)
+    if len(all_months) > 1:
+        prev_months = all_months[:-1]
+        previously_active = set()
+        
+        for prev_m in prev_months:
+            if prev_m in posts:
+                for q in posts[prev_m].get('questions', []):
+                    if q.get('user_id'):
+                        previously_active.add(q['user_id'])
+                for a in posts[prev_m].get('answers', []):
+                    if a.get('user_id'):
+                        previously_active.add(a['user_id'])
+        
+        new_users_this_month = current_month_users - previously_active
+    else:
+        new_users_this_month = current_month_users
+    
+    # Compute growth rate relative to previous month
+    growth = 0.0
+    if prev_month and prev_month in posts:
+        prev_questions = posts[prev_month].get('questions', [])
+        prev_answers = posts[prev_month].get('answers', [])
+        
+        prev_month_users = set()
+        for q in prev_questions:
+            if q.get('user_id'):
+                prev_month_users.add(q['user_id'])
+        for a in prev_answers:
+            if a.get('user_id'):
+                prev_month_users.add(a['user_id'])
+        
+        months_before_prev = [m for m in all_months if m < prev_month]
+        previously_active_before_prev = set()
+        
+        for m in months_before_prev:
+            if m in posts:
+                for q in posts[m].get('questions', []):
+                    if q.get('user_id'):
+                        previously_active_before_prev.add(q['user_id'])
+                for a in posts[m].get('answers', []):
+                    if a.get('user_id'):
+                        previously_active_before_prev.add(a['user_id'])
+        
+        new_users_prev_month = prev_month_users - previously_active_before_prev
+        
+        if len(new_users_prev_month) > 0:
+            growth = (len(new_users_this_month) - len(new_users_prev_month)) / len(new_users_prev_month)
+        elif len(new_users_this_month) > 0:
+            growth = 1.0
+    
+    return {
+        'qpd': float(qpd),
+        'answer_rate': float(answer_rate),
+        'retention': float(retention),
+        'growth': float(growth)
+    }
