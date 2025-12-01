@@ -38,24 +38,58 @@ from src.data_processing.feature_extraction import (
 )
 
 
+def _group_comments_by_month(comments: List[Dict]) -> Dict[str, List[Dict]]:
+    """
+    Group comments by month based on creation_date.
+    
+    Args:
+        comments: List of comment dictionaries with 'creation_date' field
+        
+    Returns:
+        Dictionary mapping month (YYYY-MM) to list of comments
+    """
+    monthly_comments = defaultdict(list)
+    
+    for comment in comments:
+        creation_date = comment.get('creation_date')
+        if not creation_date:
+            continue
+        
+        # Extract YYYY-MM from creation_date
+        try:
+            month = creation_date[:7]  # 'YYYY-MM'
+            monthly_comments[month].append(comment)
+        except (IndexError, TypeError):
+            continue
+    
+    return dict(monthly_comments)
+
+
 def load_site_data(site_folder: Path) -> Optional[Dict]:
     """Load all data files for a site."""
     posts_path = site_folder / "monthly_posts.pkl.gz"
     users_path = site_folder / "users.pkl.gz"
     tags_path = site_folder / "tags.pkl.gz"
+    comments_path = site_folder / "comments.pkl.gz"
     
     if not posts_path.exists():
         return None
     
     try:
+        # Load data files (posts already grouped by month, comments need grouping)
         posts = pd.read_pickle(posts_path, compression="gzip")
         users = pd.read_pickle(users_path, compression="gzip") if users_path.exists() else {}
         tags = pd.read_pickle(tags_path, compression="gzip") if tags_path.exists() else {}
+        
+        # Comments come as flat list, group by month to match posts structure
+        comments_list = pd.read_pickle(comments_path, compression="gzip") if comments_path.exists() else []
+        comments = _group_comments_by_month(comments_list) if comments_list else {}
         
         return {
             'posts': posts,
             'users': users,
             'tags': tags,
+            'comments': comments,
         }
     except Exception as e:
         print(f"Error loading {site_folder.name}: {e}")
@@ -65,6 +99,7 @@ def load_site_data(site_folder: Path) -> Optional[Dict]:
 def create_hetero_graph_with_features(
     posts: Dict,
     users: Dict,
+    comments: Dict,
     month: str,
     prev_month: Optional[str] = None,
     next_month: Optional[str] = None
@@ -166,15 +201,16 @@ def create_hetero_graph_with_features(
         data['tag', 'contributed_to_by', 'user'].edge_weight = edge_weight_tensor
     
     # ===== Build Tag Features =====
-    # Get all tag features in one pass
-    tag_features_dict = build_tag_features(posts, month, prev_month)
+    tag_features_dict = build_tag_features(posts, comments, month, prev_month, tag_set)
     
     # Extract features in sorted order
     tag_feature_matrix = []
     for tag in sorted(tag_set):
         feats = tag_features_dict[tag]
         feature_vector = [
-            feats['popularity'],
+            feats['post_popularity'],
+            feats['comment_popularity'],
+            feats['avg_views'],
             feats['answer_quality'],
             feats['difficulty'],
             feats['diversity'],
@@ -185,7 +221,7 @@ def create_hetero_graph_with_features(
     data['tag'].x = torch.tensor(tag_feature_matrix, dtype=torch.float)
     
     # ===== Build User Features =====
-    user_features_dict = build_user_features(posts, users, month, next_month)
+    user_features_dict = build_user_features(posts, comments, users, month, next_month)
     
     user_feature_matrix = []
     for user_id in sorted(user_set):
@@ -238,6 +274,7 @@ def build_graphs_for_site(
     
     posts = data['posts']
     users = data['users']
+    comments = data.get('comments', {})
     
     # Get all months
     months = get_sorted_months(posts)
@@ -270,7 +307,7 @@ def build_graphs_for_site(
         
         # Build graph
         try:
-            graph = create_hetero_graph_with_features(posts, users, month, prev_month, next_month)
+            graph = create_hetero_graph_with_features(posts, users, comments, month, prev_month, next_month)
             
             if graph is not None:
                 torch.save(graph, output_path)
@@ -278,7 +315,10 @@ def build_graphs_for_site(
             else:
                 skipped_count += 1
         except Exception as e:
+            import traceback
             print(f"\nError processing {site_name} {month}: {e}")
+            print(f"Full traceback:")
+            traceback.print_exc()
             error_count += 1
             skipped_count += 1
     

@@ -350,7 +350,7 @@ class TemporalCommunityGNNBatched(TemporalCommunityGNN):
 
 def create_model(
     user_feat_dim: int = 5,
-    tag_feat_dim: int = 5,
+    tag_feat_dim: int = 7,
     hidden_dim: int = 128,
     num_conv_layers: int = 3,
     num_transformer_layers: int = 3,
@@ -407,7 +407,7 @@ if __name__ == "__main__":
     # Model configuration
     model = create_model(
         user_feat_dim=5,  # reputation, tenure, activity, expertise_entropy, retention
-        tag_feat_dim=5,   # popularity, answer_quality, difficulty, diversity, growth_rate
+        tag_feat_dim=7,   # post_popularity, comment_popularity, avg_views, answer_quality, difficulty, diversity, growth_rate
         hidden_dim=128,
         num_conv_layers=3,
         num_transformer_layers=3,

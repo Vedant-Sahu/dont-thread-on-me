@@ -11,6 +11,7 @@ Usage:
     user_features = build_user_features(posts, users, month, next_month)
 """
 
+import math
 import numpy as np
 from calendar import monthrange
 from collections import defaultdict
@@ -21,11 +22,55 @@ from scipy.stats import entropy
 
 # ===== TAG FEATURES =====
 
-def compute_tag_popularity(posts: Dict, month: str, tag: str) -> int:
+def compute_tag_post_popularity(posts: Dict, month: str, tag: str) -> int:
     """Number of questions with this tag in the month."""
     questions = posts[month]['questions']
     count = sum(1 for q in questions if tag in q['tags'])
     return count
+
+
+def compute_tag_avg_views(posts: Dict, month: str, tag: str) -> float:
+    """Average view count per question for this tag in the month."""
+    questions = posts[month]['questions']
+    tag_questions = [q for q in questions if tag in q['tags']]
+    
+    if not tag_questions:
+        return 0.0
+    
+    avg_views = np.mean([q.get('view_count', 0) for q in tag_questions])
+    return float(avg_views)
+
+
+def compute_tag_comment_popularity(posts: Dict, comments: Dict, month: str, tag: str) -> int:
+    """
+    Number of comments on posts (questions or answers) with this tag in the month.
+    
+    Comments can be on questions or answers. We need to:
+    1. Get all post_ids (questions + answers) with this tag
+    2. Count comments on those posts
+    """
+    if not comments or month not in posts:
+        return 0
+    
+    # Get question IDs with this tag
+    questions = posts[month]['questions']
+    question_ids = {q['post_id'] for q in questions if tag in q['tags']}
+    
+    # Get answer IDs for questions with this tag (answers inherit parent tags)
+    answers = posts[month].get('answers', [])
+    answer_ids = {a['post_id'] for a in answers if tag in a.get('parent_tags', [])}
+    
+    # Combine all post IDs
+    post_ids = question_ids | answer_ids
+    
+    if not post_ids:
+        return 0
+    
+    # Count comments on these posts in this month
+    month_comments = comments.get(month, [])
+    comment_count = sum(1 for c in month_comments if c.get('post_id') in post_ids)
+    
+    return comment_count
 
 
 def compute_tag_growth_rate(posts: Dict, current_month: str, previous_month: str, tag: str) -> float:
@@ -33,8 +78,8 @@ def compute_tag_growth_rate(posts: Dict, current_month: str, previous_month: str
     if previous_month not in posts:
         return 0.0
     
-    curr_pop = compute_tag_popularity(posts, current_month, tag)
-    prev_pop = compute_tag_popularity(posts, previous_month, tag)
+    curr_pop = compute_tag_post_popularity(posts, current_month, tag)
+    prev_pop = compute_tag_post_popularity(posts, previous_month, tag)
     
     if prev_pop == 0:
         return 0.0 if curr_pop == 0 else 1.0
@@ -42,21 +87,49 @@ def compute_tag_growth_rate(posts: Dict, current_month: str, previous_month: str
     return (curr_pop - prev_pop) / prev_pop
 
 
-def compute_tag_answer_quality(posts: Dict, month: str, tag: str) -> float:
-    """Average score of answers to questions with this tag."""
+def compute_tag_answer_quality(posts: Dict, month: str, tag: str, top_pct: float = 0.1) -> float:
+    """    
+    Searches across all months for answers to questions from the target month,
+    then computes the mean of the top k answers by score, where k is a percentage
+    of all relevant answers (rounded up to nearest integer).
+
+    """
     questions = posts[month]['questions']
-    answers = posts[month]['answers']
     
     # Get question IDs with this tag
     question_ids = {q['post_id'] for q in questions if tag in q['tags']}
     
-    # Get answers to those questions
-    relevant_answers = [a for a in answers if a['parent_id'] in question_ids]
+    if not question_ids:
+        return 0.0
+    
+    # Search ALL months for answers to questions from the target month
+    # (Answers can be posted in later months than the question)
+    relevant_answers = []
+    for answer_month in posts.keys():
+        if answer_month == 'metadata':  # Skip metadata if present
+            continue
+        month_answers = posts[answer_month].get('answers', [])
+        # Filter by parent_id AND parent_month to ensure we get answers to questions from target month
+        relevant_answers.extend([
+            a for a in month_answers 
+            if a['parent_id'] in question_ids and a.get('parent_month') == month
+        ])
     
     if not relevant_answers:
         return 0.0
     
-    avg_score = np.mean([a['score'] for a in relevant_answers])
+    # Calculate k as percentage of total answers, rounded UP to nearest integer
+    # e.g., 10% of 3 answers = 0.3 → ceil(0.3) = 1
+    # e.g., 10% of 50 answers = 5.0 → ceil(5.0) = 5
+    total_answers = len(relevant_answers)
+    k = max(1, math.ceil(top_pct * total_answers))  # Ensure at least 1 answer
+    
+    # Sort by score (descending) and take top k
+    sorted_answers = sorted(relevant_answers, key=lambda a: a['score'], reverse=True)
+    top_k_answers = sorted_answers[:k]
+    
+    # Compute mean of top k scores
+    avg_score = np.mean([a['score'] for a in top_k_answers])
     return float(avg_score)
 
 
@@ -95,20 +168,23 @@ def compute_tag_diversity(posts: Dict, month: str, tag: str) -> float:
     return float(entropy(counts))  # Higher = more diverse
 
 
-def build_tag_features(posts: Dict, month: str, previous_month: Optional[str] = None) -> Dict[str, Dict]:
+def build_tag_features(posts: Dict, comments: Dict, month: str, previous_month: Optional[str] = None, tag_set: Optional[set] = None) -> Dict[str, Dict]:
     """Build feature dictionary for all tags in a month."""
-    questions = posts[month]['questions']
-    
-    # Get all tags
-    tags = set()
-    for q in questions:
-        tags.update(q['tags'])
+    if tag_set is not None:
+        tags = tag_set
+    else:
+        questions = posts[month]['questions']
+        tags = set()
+        for q in questions:
+            tags.update(q['tags'])
     
     tag_features = {}
     
     for tag in tags:
         features = {
-            'popularity': compute_tag_popularity(posts, month, tag),
+            'post_popularity': compute_tag_post_popularity(posts, month, tag),
+            'comment_popularity': compute_tag_comment_popularity(posts, comments, month, tag),
+            'avg_views': compute_tag_avg_views(posts, month, tag),
             'answer_quality': compute_tag_answer_quality(posts, month, tag),
             'difficulty': compute_tag_difficulty(posts, month, tag),
             'diversity': compute_tag_diversity(posts, month, tag),
@@ -152,15 +228,17 @@ def compute_user_tenure(users: Dict, user_id: str, current_month: str) -> int:
     return max(0, months_diff)
 
 
-def compute_user_activity(posts: Dict, month: str, user_id: str) -> int:
-    """Total contributions (questions + answers) in the month."""
+def compute_user_activity(posts: Dict, comments: Dict, month: str, user_id: str) -> int:
+    """Total contributions (questions + answers + comments) in the month."""
     questions = posts[month]['questions']
     answers = posts[month]['answers']
+    month_comments = comments.get(month, [])
     
     q_count = sum(1 for q in questions if q['user_id'] == user_id)
     a_count = sum(1 for a in answers if a['user_id'] == user_id)
+    c_count = sum(1 for c in month_comments if c.get('user_id') == user_id)
     
-    return q_count + a_count
+    return q_count + a_count + c_count
 
 
 def compute_user_expertise_entropy(posts: Dict, month: str, user_id: str) -> float:
@@ -187,26 +265,29 @@ def compute_user_expertise_entropy(posts: Dict, month: str, user_id: str) -> flo
     return float(entropy(counts))  # Higher = more generalist
 
 
-def compute_user_retention(posts: Dict, month: str, next_month: str, user_id: str) -> int:
-    """Binary: is user active in next month?"""
+def compute_user_retention(posts: Dict, comments: Dict, month: str, next_month: str, user_id: str) -> int:
+    """Binary: is user active in next month? (questions, answers, or comments)"""
     if next_month not in posts:
         return 0
     
     next_questions = posts[next_month]['questions']
     next_answers = posts[next_month]['answers']
+    next_comments = comments.get(next_month, [])
     
-    active_next = any(q['user_id'] == user_id for q in next_questions) or \
-                  any(a['user_id'] == user_id for a in next_answers)
+    active_next = (any(q['user_id'] == user_id for q in next_questions) or
+                   any(a['user_id'] == user_id for a in next_answers) or
+                   any(c.get('user_id') == user_id for c in next_comments))
     
     return 1 if active_next else 0
 
 
-def build_user_features(posts: Dict, users: Dict, month: str, next_month: Optional[str] = None) -> Dict[str, Dict]:
+def build_user_features(posts: Dict, comments: Dict, users: Dict, month: str, next_month: Optional[str] = None) -> Dict[str, Dict]:
     """Build feature dictionary for all users in a month."""
     questions = posts[month]['questions']
     answers = posts[month]['answers']
+    month_comments = comments.get(month, [])
     
-    # Get all users
+    # Get all users (from questions, answers, and comments)
     user_ids = set()
     for q in questions:
         if q['user_id']:
@@ -214,6 +295,9 @@ def build_user_features(posts: Dict, users: Dict, month: str, next_month: Option
     for a in answers:
         if a['user_id']:
             user_ids.add(a['user_id'])
+    for c in month_comments:
+        if c.get('user_id'):
+            user_ids.add(c['user_id'])
     
     user_features = {}
     
@@ -221,13 +305,13 @@ def build_user_features(posts: Dict, users: Dict, month: str, next_month: Option
         features = {
             'reputation': compute_user_reputation(users, user_id),
             'tenure': compute_user_tenure(users, user_id, month),
-            'activity': compute_user_activity(posts, month, user_id),
+            'activity': compute_user_activity(posts, comments, month, user_id),
             'expertise_entropy': compute_user_expertise_entropy(posts, month, user_id),
         }
         
         # Add retention if next month available
         if next_month:
-            features['retention'] = compute_user_retention(posts, month, next_month, user_id)
+            features['retention'] = compute_user_retention(posts, comments, month, next_month, user_id)
         else:
             features['retention'] = 0
         
@@ -291,7 +375,7 @@ def compute_community_metrics(
     
     retention = 0.0
     if active_users_this_month:
-        user_features = build_user_features(posts, users, month, None)
+        user_features = build_user_features(posts, {}, users, month, None)  # Empty comments dict
         retention_values = [user_features[uid]['retention'] for uid in active_users_this_month 
                            if uid in user_features]
         retention = sum(retention_values) / len(retention_values) if retention_values else 0.0
