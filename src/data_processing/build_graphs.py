@@ -511,7 +511,7 @@ def process_single_task(
             torch.save(graph, output_path)
             return {'status': 'built', 'site_name': site_name, 'month': month}
         else:
-            print({'status': 'skipped', 'site_name': site_name, 'month': month})
+            # Graph is None - likely no data for this month
             return {'status': 'skipped', 'site_name': site_name, 'month': month}
     except Exception as e:
         import traceback
@@ -576,6 +576,7 @@ def process_site_months(
                 torch.save(graph, output_path)
                 results.append({'status': 'built', 'site_name': site_name, 'month': month})
             else:
+                # Graph is None - likely no data for this month
                 results.append({'status': 'skipped', 'site_name': site_name, 'month': month})
         except Exception as e:
             import traceback
@@ -831,10 +832,10 @@ def process_all_tasks_parallel(
     """
     total_stats = {'built': 0, 'skipped': 0, 'errors': 0}
     error_messages = []
+    skipped_combos = []  # Track skipped community/month combinations
     
     # Group tasks by site
     grouped_tasks = group_tasks_by_site(all_tasks)
-    
     print(f"\nProcessing {len(all_tasks)} tasks across {len(grouped_tasks)} sites using {num_workers} workers...")
     print("Grouping by site to minimize file I/O (load once per site, process all months)")
     
@@ -863,6 +864,7 @@ def process_all_tasks_parallel(
                 total_stats['built'] += 1
             elif result['status'] == 'skipped':
                 total_stats['skipped'] += 1
+                skipped_combos.append((result['site_name'], result['month']))
             elif result['status'] == 'error':
                 total_stats['errors'] += 1
                 if 'error' in result:
@@ -877,6 +879,9 @@ def process_all_tasks_parallel(
             print(error_msg)
         if len(error_messages) > 10:
             print(f"... and {len(error_messages) - 10} more errors")
+    
+    # Store skipped combos in stats for printing
+    total_stats['skipped_combos'] = skipped_combos
     
     return total_stats
 
@@ -911,6 +916,17 @@ def print_summary(total_stats: Dict, output_dir: Path, initial_count: int, filte
     print(f"  - Skipped: {total_stats['skipped']}")
     print(f"  - Errors: {total_stats['errors']}")
     print(f"Graphs saved to: {output_dir}")
+    
+    # Print skipped community/month combinations
+    skipped_combos = total_stats.get('skipped_combos', [])
+    if skipped_combos:
+        print(f"\n{'='*60}")
+        print(f"Skipped Community/Month Combinations ({len(skipped_combos)}):")
+        print(f"{'='*60}")
+        # Sort for easier reading
+        skipped_combos_sorted = sorted(skipped_combos)
+        for site_name, month in skipped_combos_sorted:
+            print(f"  {site_name} / {month}")
 
 
 def main():
