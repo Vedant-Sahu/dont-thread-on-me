@@ -211,7 +211,7 @@ class TemporalCommunityDataset(Dataset):
         for month in sample['sequence_months']:
             graph_path = community_dir / f"{month}.pt"
             try:
-                graph = torch.load(graph_path)
+                graph = torch.load(graph_path, weights_only=False)
                 graphs.append(graph)
             except Exception as e:
                 raise RuntimeError(
@@ -221,7 +221,7 @@ class TemporalCommunityDataset(Dataset):
         # Load target from t+6
         target_path = community_dir / f"{sample['target_month']}.pt"
         try:
-            target_graph = torch.load(target_path)
+            target_graph = torch.load(target_path, weights_only=False)
             targets = target_graph.y
         except Exception as e:
             raise RuntimeError(
