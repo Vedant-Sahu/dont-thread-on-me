@@ -87,10 +87,10 @@ A linear extrapolation baseline is provided for comparison with the temporal GNN
 
 ```bash
 # Train on full dataset
-python train_baseline.py --graphs_dir /path/to/graphs --output_dir results/baseline
+python -m src.baselines.train_baseline --graphs_dir /path/to/graphs --output_dir results/baseline
 
 # Example
-python train_baseline.py --graphs_dir ~/Desktop/CS224W/graphs --output_dir results/baseline
+python -m src.baselines.train_baseline --graphs_dir ~/Desktop/CS224W/graphs --output_dir results/baseline
 ```
 
 **Saved Outputs:**
