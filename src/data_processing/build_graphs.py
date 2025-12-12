@@ -5,10 +5,10 @@ Saves graphs as .pt files for efficient loading during training.
 
 Usage:
     # Build graphs for all sites
-    python src/data_processing/build_graphs.py --data_dir ~/Desktop/CS224W/parsed --output_dir ~/Desktop/CS224W/graphs
+    python src/data_processing/build_graphs.py --data_dir data/processed/parsed --output_dir data/processed/graphs
     
     # Build graphs for specific sites
-    python src/data_processing/build_graphs.py --data_dir ~/Desktop/CS224W/parsed --output_dir ~/Desktop/CS224W/graphs --sites arduino.stackexchange.com astronomy.stackexchange.com
+    python src/data_processing/build_graphs.py --data_dir data/processed/parsed --output_dir data/processed/graphs --sites arduino.stackexchange.com astronomy.stackexchange.com
 """
 
 import argparse
@@ -16,14 +16,15 @@ import itertools
 import os
 import pickle
 import sys
+import math
 import warnings
 from collections import defaultdict
 from multiprocessing import Pool, cpu_count
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Set
 from datetime import datetime
-import math
 from scipy.stats import entropy
+from calendar import monthrange
 
 import pandas as pd
 import torch
@@ -35,13 +36,6 @@ warnings.filterwarnings('ignore')
 # Add project root to path
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
-
-# defined in feature_extraction.py
-from src.data_processing.feature_extraction import (
-    build_tag_features,
-    build_user_features,
-    compute_community_metrics,
-)
 
 
 def _group_comments_by_month(comments: List[Dict]) -> Dict[str, List[Dict]]:
@@ -111,16 +105,14 @@ def create_hetero_graph_with_features(
     next_month: Optional[str] = None
 ) -> Optional[HeteroData]:
     """
-    FULLY OPTIMIZED implementation - O(posts + answers + comments) instead of O(tags * posts * months)
+    Optimized implementation - O(posts + answers + comments)
     
-    Key optimizations:
-    1. Single pass through all data to build ALL aggregations
+    1. Single pass through all data to build all aggregations
     2. Hash map lookups instead of repeated iterations
-    3. Pre-compute answer quality per tag in ONE pass through all months
+    3. Pre-compute answer quality per tag in one pass through all months
     4. Pre-compute all user features without per-user iteration
     """
 
-    
     data = HeteroData()
     
     if month not in posts:
@@ -171,7 +163,7 @@ def create_hetero_graph_with_features(
             user_set.add(q_user_id)
             user_question_count[q_user_id] += 1
         
-        # Tag statistics - all in one loop
+        # Tag statistics 
         for tag in q_tags:
             tag_question_count[tag] += 1
             tag_view_sum[tag] += q_views
@@ -216,16 +208,15 @@ def create_hetero_graph_with_features(
     if not tag_set or not user_set:
         return None
     
-    # ========== PHASE 2: Pre-compute answer quality for ALL tags in ONE pass ==========
-    # This is the key optimization - instead of iterating all months per tag,
-    # we iterate all months ONCE and aggregate per tag
+    # ========== PHASE 2: Pre-compute answer quality for all tags in one pass ==========
+    # Iterate through all months once and aggregate per tag
     
     tag_answer_scores = defaultdict(list)  # tag -> list of scores
     
-    # Get question IDs for THIS month
+    # Get question IDs for this month
     month_question_ids = set(question_tags.keys())
     
-    # Single pass through ALL months to find answers to THIS month's questions
+    # Single pass through ALL months to find answers to this month's questions
     for answer_month in posts.keys():
         if answer_month == 'metadata':
             continue
@@ -407,7 +398,6 @@ def create_hetero_graph_with_features(
     
     # ========== PHASE 9: Community metrics (simplified) ==========
     # Compute inline instead of calling function
-    from calendar import monthrange
     year, month_num = map(int, month.split('-'))
     days_in_month = monthrange(year, month_num)[1]
     qpd = len(questions) / days_in_month
@@ -415,15 +405,66 @@ def create_hetero_graph_with_features(
     questions_with_accepted = sum(1 for q in questions if q.get('accepted_answer_id') is not None)
     answer_rate = questions_with_accepted / len(questions) if questions else 0.0
     
-    # Simplified retention (average of user retentions we already computed)
     active_user_retentions = [1 if uid in next_month_active_users else 0 for uid in user_set]
     avg_retention = sum(active_user_retentions) / len(active_user_retentions) if active_user_retentions else 0.0
     
+    current_month_dt = datetime.strptime(month, '%Y-%m')
+    
+    new_users_current = 0
+    if users:
+        for user_id in user_set:
+            if user_id in users:
+                creation_date = users[user_id].get('creation_date')
+                if creation_date:
+                    try:
+                        user_join = datetime.strptime(creation_date[:7], '%Y-%m')
+                        # User is "new" if they joined this month
+                        if user_join.year == current_month_dt.year and user_join.month == current_month_dt.month:
+                            new_users_current += 1
+                    except (ValueError, AttributeError):
+                        pass
+
+    # Calculate new users for previous month
+    growth = 0.0
+
+    # Check prev_month is not None and exists in posts
+    if prev_month is not None and prev_month in posts and users:
+        prev_month_dt = datetime.strptime(prev_month, '%Y-%m')
+    
+    # Get active users in prev month  
+    prev_user_set = set()
+    for q in posts[prev_month].get('questions', []):
+        if q.get('user_id'):
+            prev_user_set.add(q['user_id'])
+    for a in posts[prev_month].get('answers', []):
+        if a.get('user_id'):
+            prev_user_set.add(a['user_id'])    
+    
+    # Count new users who joined in previous month
+    new_users_prev = 0
+    for user_id in prev_user_set:
+        if user_id in users:
+            creation_date = users[user_id].get('creation_date')
+            if creation_date:
+                try:
+                    user_join = datetime.strptime(creation_date[:7], '%Y-%m')
+                    # User is "new" to prev month if they joined that month
+                    if user_join.year == prev_month_dt.year and user_join.month == prev_month_dt.month:
+                        new_users_prev += 1
+                except (ValueError, AttributeError):
+                    pass
+    
+    # Calculate growth rate: (current - prev) / prev
+    if new_users_prev > 0:
+        growth = (new_users_current - new_users_prev) / new_users_prev
+    elif new_users_current > 0:
+        growth = 1.0  # All growth if no new users previously
+
     data.y = {
         'qpd': float(qpd),
         'answer_rate': float(answer_rate),
         'retention': float(avg_retention),
-        'growth': 0.0  # Simplified - computing full growth is expensive
+        'growth': float(growth)
     }
     
     data['tag'].tag_to_idx = tag_to_idx
