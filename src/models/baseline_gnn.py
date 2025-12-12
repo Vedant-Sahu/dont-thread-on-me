@@ -1,8 +1,9 @@
 """
-Temporal Graph Neural Network for Online Community Health Prediction
+Graph Neural Network for Online Community Health Prediction
 
-This module implements a heterogeneous GNN with temporal modeling to predict
-engagement metrics for Stack Exchange communities 6 months ahead.
+This module implements a heterogeneous GNN with to predict engagement
+metrics for Stack Exchange communities 6 months ahead. This model
+does not have a temporal component and is used as a baseline.
 
 Optimized Version: Uses batched graph processing for 10-50× speedup.
 """
@@ -13,9 +14,9 @@ from torch_geometric.nn import SAGEConv, HeteroConv
 from torch_geometric.data import Batch
 
 
-class TemporalCommunityGNN(nn.Module):
+class CommunityGNN(nn.Module):
     """
-    Temporal GNN for predicting community health trajectories.
+    GNN for predicting community health trajectories.
     
     Architecture:
     1. Batch normalization on raw features
@@ -23,19 +24,16 @@ class TemporalCommunityGNN(nn.Module):
     3. Multiple HeteroConv layers with SAGEConv
     4. ReLU activation + Dropout after each conv
     5. Graph-level pooling (separate for users and tags)
-    6. Stack 12 monthly embeddings into temporal sequence
-    7. Transformer encoder for temporal modeling
-    8. Multi-task prediction heads for 3 engagement metrics
+    6. Average 12 monthly embeddings
+    7. Multi-task prediction heads for 3 engagement metrics
     
     Args:
         user_feat_dim (int): Dimension of raw user features
         tag_feat_dim (int): Dimension of raw tag features
         hidden_dim (int): Hidden dimension for embeddings
         num_conv_layers (int): Number of graph convolutional layers
-        num_transformer_layers (int): Number of transformer encoder layers
-        num_attention_heads (int): Number of attention heads in transformer
         dropout (float): Dropout probability
-        transformer_ffn_dim (int): Feedforward network dimension in transformer
+        use_mlp (bool): Whether to add MLP after temporal aggregation
     """
     
     def __init__(
@@ -44,16 +42,15 @@ class TemporalCommunityGNN(nn.Module):
         tag_feat_dim: int,
         hidden_dim: int = 128,
         num_conv_layers: int = 3,
-        num_transformer_layers: int = 3,
-        num_attention_heads: int = 4,
         dropout: float = 0.1,
-        transformer_ffn_dim: int = 256
+        use_mlp: bool = True
     ):
-        super(TemporalCommunityGNN, self).__init__()
+        super(CommunityGNN, self).__init__()
         
         self.hidden_dim = hidden_dim
         self.num_conv_layers = num_conv_layers
         self.dropout = dropout
+        self.use_mlp = use_mlp
         
         # ===================================================================
         # Stage 1: Batch Normalization and Feature Projection
@@ -94,25 +91,19 @@ class TemporalCommunityGNN(nn.Module):
         self.conv_dropout = nn.Dropout(dropout)
         
         # ===================================================================
-        # Stage 3: Temporal Modeling with Transformer
+        # Stage 3: Optional MLP for Better GPU Utilization
         # ===================================================================
         
-        # Community embedding dimension = 2 * hidden_dim (user + tag pooled)
         community_emb_dim = 2 * hidden_dim
         
-        # Transformer encoder for capturing temporal dynamics
-        encoder_layer = nn.TransformerEncoderLayer(
-            d_model=community_emb_dim,
-            nhead=num_attention_heads,
-            dim_feedforward=transformer_ffn_dim,
-            dropout=dropout,
-            batch_first=True  # Input shape: [batch, seq_len, emb_dim]
-        )
-        
-        self.temporal_encoder = nn.TransformerEncoder(
-            encoder_layer,
-            num_layers=num_transformer_layers
-        )
+        if use_mlp:
+            # MLP to add computational complexity and improve GPU utilization
+            self.mlp = nn.Sequential(
+                nn.Linear(community_emb_dim, community_emb_dim),
+                nn.ReLU(),
+                nn.Dropout(dropout),
+                nn.Linear(community_emb_dim, community_emb_dim)
+            )
         
         # ===================================================================
         # Stage 4: Multi-task Prediction Heads
@@ -216,47 +207,28 @@ class TemporalCommunityGNN(nn.Module):
         
         return community_emb
     
-    def forward_temporal_sequence(self, monthly_embeddings):
+    def predict_metrics(self, final_repr):
         """
-        Stage 4: Apply transformer to temporal sequence.
+        Multi-task prediction of engagement metrics.
         
         Args:
-            monthly_embeddings (torch.Tensor): Stacked monthly embeddings
-                                                Shape: [batch_size, 12, 2*hidden_dim]
-        
-        Returns:
-            torch.Tensor: Temporal representation, shape [batch_size, 2*hidden_dim]
-        """
-        # Apply transformer encoder
-        temporal_out = self.temporal_encoder(monthly_embeddings)  # [batch, 12, 2*hidden]
-        
-        # Use final timestep as community temporal representation
-        final_repr = temporal_out[:, -1, :]  # [batch, 2*hidden_dim]
-        
-        return final_repr
-    
-    def predict_metrics(self, temporal_repr):
-        """
-        Stage 5: Multi-task prediction of engagement metrics.
-        
-        Args:
-            temporal_repr (torch.Tensor): Temporal representation
-                                          Shape: [batch_size, 2*hidden_dim]
+            final_repr (torch.Tensor): Final representation
+                                        Shape: [batch_size, 2*hidden_dim]
         
         Returns:
             dict: Predicted metrics for each task
         """
         predictions = {
-            "qpd": self.qpd_head(temporal_repr).squeeze(-1),          # Questions per day
-            "answer_rate": self.ansrate_head(temporal_repr).squeeze(-1),  # Answer rate
-            "retention": self.retention_head(temporal_repr).squeeze(-1),  # User retention
+            "qpd": self.qpd_head(final_repr).squeeze(-1),          # Questions per day
+            "answer_rate": self.ansrate_head(final_repr).squeeze(-1),  # Answer rate
+            "retention": self.retention_head(final_repr).squeeze(-1),  # User retention
         }
         
         return predictions
     
     def forward(self, monthly_graphs):
         """
-        Full forward pass through the temporal GNN.
+        Full forward pass through the GNN.
         
         Args:
             monthly_graphs (list): List of 12 monthly graphs, where each graph is a tuple:
@@ -284,16 +256,20 @@ class TemporalCommunityGNN(nn.Module):
         # Stack into temporal sequence [1, 12, 2*hidden_dim]
         monthly_embeddings = torch.stack(monthly_embeddings).unsqueeze(0)
         
-        # Apply temporal modeling
-        temporal_repr = self.forward_temporal_sequence(monthly_embeddings)
+        # Take mean of monthly embeddings
+        final_repr = monthly_embeddings.mean(dim=1)  # [1, 2*hidden_dim]
+        
+        # Optional MLP for better GPU utilization
+        if self.use_mlp:
+            final_repr = self.mlp(final_repr)
         
         # Predict engagement metrics
-        predictions = self.predict_metrics(temporal_repr)
+        predictions = self.predict_metrics(final_repr)
         
         return predictions
 
 
-class TemporalCommunityGNNBatched(TemporalCommunityGNN):
+class CommunityGNNBatched(CommunityGNN):
     """
     Optimized batched version with parallel graph processing.
     
@@ -392,21 +368,22 @@ class TemporalCommunityGNNBatched(TemporalCommunityGNN):
         # Shape: [batch_size * 12, 2*hidden_dim]
         
         # =====================================================================
-        # STEP 5: Reshape into temporal sequences
+        # STEP 5: Reshape and aggregate temporal sequences
         # =====================================================================
         # Reshape: [batch_size * 12, emb_dim] → [batch_size, 12, emb_dim]
         monthly_embeddings = all_community_embs.view(batch_size, seq_len, -1)
         
-        # =====================================================================
-        # STEP 6: Apply Transformer for temporal modeling
-        # =====================================================================
-        temporal_repr = self.forward_temporal_sequence(monthly_embeddings)
-        # Shape: [batch_size, 2*hidden_dim]
+        # Average over time dimension
+        final_repr = monthly_embeddings.mean(dim=1)  # [batch_size, 2*hidden_dim]
+        
+        # Optional MLP for better GPU utilization
+        if self.use_mlp:
+            final_repr = self.mlp(final_repr)
         
         # =====================================================================
-        # STEP 7: Predict engagement metrics
+        # STEP 6: Predict engagement metrics
         # =====================================================================
-        predictions = self.predict_metrics(temporal_repr)
+        predictions = self.predict_metrics(final_repr)
         
         return predictions
 
@@ -416,56 +393,48 @@ def create_model(
     tag_feat_dim: int = 7,
     hidden_dim: int = 128,
     num_conv_layers: int = 3,
-    num_transformer_layers: int = 3,
-    num_attention_heads: int = 4,
     dropout: float = 0.1,
-    transformer_ffn_dim: int = 256,
+    use_mlp: bool = False,
     batched: bool = True
 ):
     """
-    Factory function to create temporal GNN model.
+    Factory function to create GNN model.
     
     Args:
         user_feat_dim (int): Number of user features
         tag_feat_dim (int): Number of tag features
         hidden_dim (int): Hidden dimension size
         num_conv_layers (int): Number of graph conv layers
-        num_transformer_layers (int): Number of transformer layers
-        num_attention_heads (int): Number of attention heads
         dropout (float): Dropout rate
-        transformer_ffn_dim (int): Transformer FFN dimension
+        use_mlp (bool): Add MLP after temporal aggregation for better GPU utilization
         batched (bool): Whether to use optimized batched version (RECOMMENDED)
     
     Returns:
-        nn.Module: Temporal GNN model
+        nn.Module: GNN model
     """
     if batched:
-        return TemporalCommunityGNNBatched(
+        return CommunityGNNBatched(
             user_feat_dim=user_feat_dim,
             tag_feat_dim=tag_feat_dim,
             hidden_dim=hidden_dim,
             num_conv_layers=num_conv_layers,
-            num_transformer_layers=num_transformer_layers,
-            num_attention_heads=num_attention_heads,
             dropout=dropout,
-            transformer_ffn_dim=transformer_ffn_dim
+            use_mlp=use_mlp
         )
     else:
-        return TemporalCommunityGNN(
+        return CommunityGNN(
             user_feat_dim=user_feat_dim,
             tag_feat_dim=tag_feat_dim,
             hidden_dim=hidden_dim,
             num_conv_layers=num_conv_layers,
-            num_transformer_layers=num_transformer_layers,
-            num_attention_heads=num_attention_heads,
             dropout=dropout,
-            transformer_ffn_dim=transformer_ffn_dim
+            use_mlp=use_mlp
         )
 
 
 if __name__ == "__main__":
     # Example usage
-    print("Creating Temporal Community GNN...")
+    print("Creating Optimized Community GNN...")
     print("=" * 70)
     
     # Model configuration
@@ -474,18 +443,17 @@ if __name__ == "__main__":
         tag_feat_dim=7,   # post_popularity, comment_popularity, avg_views, answer_quality, difficulty, diversity, growth_rate
         hidden_dim=128,
         num_conv_layers=3,
-        num_transformer_layers=3,
-        num_attention_heads=4,
-        dropout=0.4,  # Higher for 2000 samples
-        batched=True  # ALWAYS use True for training
+        dropout=0.1,
+        use_mlp=True,  # Set to True for better GPU utilization
+        batched=True    # ALWAYS use True for training
     )
     
     print(f"\nModel Architecture:")
     print(f"  User features: 5 → Embedding: 128")
     print(f"  Tag features: 7 → Embedding: 128")
     print(f"  Graph conv layers: 3")
-    print(f"  Transformer layers: 3 (4 attention heads)")
     print(f"  Community embedding: 256 (128 user + 128 tag)")
+    print(f"  MLP enabled: True")
     print(f"  Output: 3 metrics (QPD, Answer Rate, Retention)")
     
     print(f"\nModel Statistics:")
